@@ -61,8 +61,13 @@ const Contact = () => {
     }, []);
 
     const handleSubmit = () => {
+        // Show the success message immediately
         setStatusVisible(true);
-        formRef.current.reset();
+
+        // Delay the form reset by 1 second (1000 milliseconds)
+        setTimeout(() => {
+            formRef.current.reset();
+        }, 1500); // Adjust the delay time as needed
     };
 
     return (

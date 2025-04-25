@@ -62,7 +62,7 @@ const Contact = () => {
 
     const handleSubmit = () => {
         sessionStorage.setItem('formSubmitted', 'true');
-        navigate('/pl/offer', {replace: true});
+        navigate(`/${language}/contact`, {replace: true});
 
     };
 

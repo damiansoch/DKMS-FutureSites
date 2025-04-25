@@ -101,9 +101,9 @@ const Contact = () => {
                     <h2 className="text-center text-white mb-4">{t.contactTitle}</h2>
 
                     <Form
+                        onSubmit={handleSubmit}
                         method="POST"
                         action="https://formspree.io/f/mwpopkqg"
-                        onSubmit={handleSubmit}
                         ref={formRef}
                     >
                         <input type="hidden" name="_captcha" value="true"/>

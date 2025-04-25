@@ -61,9 +61,8 @@ const Contact = () => {
     }, []);
 
     const handleSubmit = () => {
-        sessionStorage.setItem('formSubmitted', 'true');
-        navigate(`/${language}/contact`, {replace: true});
-
+        setStatusVisible(true);
+        formRef.current.reset();
     };
 
     return (

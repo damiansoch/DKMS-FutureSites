@@ -12,6 +12,7 @@ const Contact = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const formRef = useRef(null);
     const {language} = useLanguage();
+    const [key, setKey] = useState(Date.now()); // Use Date.now() to force re-render
 
     const translations = {
         en: {
@@ -49,7 +50,7 @@ const Contact = () => {
             sessionStorage.removeItem('formSubmitted');
             formRef.current.reset();
         }
-    }, []);
+    }, [key]);
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -59,7 +60,7 @@ const Contact = () => {
 
     const handleSubmit = () => {
         sessionStorage.setItem('formSubmitted', 'true');
-        
+
 
     };
 

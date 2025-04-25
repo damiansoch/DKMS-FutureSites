@@ -8,7 +8,7 @@ import contactIcon from '../assets/icons/contact.png';
 import plFlag from '../assets/icons/plFlag.png';
 import gbFlag from '../assets/icons/gbFlag.png';
 
-import {useLanguage} from '../context/LanguageContext';
+import {useLanguage} from '../Context/LanguageContext';
 import {useUI} from '../Context/UIContext';
 
 const BottomNav = () => {

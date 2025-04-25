@@ -2,7 +2,7 @@ import {useState, useRef, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {useAuth} from '../auth';
 import {Navbar as RBNavbar, Container, Nav, Button} from 'react-bootstrap';
-import {useLanguage} from '../context/LanguageContext';
+import {useLanguage} from '../Context/LanguageContext';
 import {useLocation} from 'react-router-dom';
 import logo from '../assets/fabryka_stron_logo.png';
 

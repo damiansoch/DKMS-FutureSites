@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import {useLanguage} from '../context/LanguageContext';
+import {useLanguage} from '../Context/LanguageContext.jsx';
 
 import HomeBkgEn from '../assets/HomeBkg_en.png';
 import HomeBkgPl from '../assets/HomeBkg_pl.png';

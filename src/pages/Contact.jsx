@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {Form, Button, FloatingLabel} from 'react-bootstrap';
 import {motion} from 'framer-motion';
 import ParticlesBackground from "../components/AboutComponents/ParticlesBackground.jsx";
@@ -13,6 +14,7 @@ const Contact = () => {
     const formRef = useRef(null);
     const {language} = useLanguage();
     const [key, setKey] = useState(Date.now()); // Use Date.now() to force re-render
+    const navigate = useNavigate();
 
     const translations = {
         en: {
@@ -60,7 +62,7 @@ const Contact = () => {
 
     const handleSubmit = () => {
         sessionStorage.setItem('formSubmitted', 'true');
-
+        navigate('/pl/offer', {replace: true});
 
     };
 

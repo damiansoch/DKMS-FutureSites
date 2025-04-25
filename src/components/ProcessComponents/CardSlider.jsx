@@ -4,7 +4,7 @@ import {FaEyeSlash} from 'react-icons/fa';
 import cardDataEn from './cardDataEn';
 import cardDataPL from './cardDataPL';
 import {useLanguage} from '../../Context/LanguageContext';
-import {useUI} from '../../context/UIContext';
+import {useUI} from '../../Context/UIContext';
 import customBurger from '../../assets/icons/custom burger.png';
 import EntryAnimationProvider from "../../Functions/EntryAnimationProvider.jsx";
 

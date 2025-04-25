@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+    <!-- Polish Pages -->
+    <url>
+        <loc>https://a9d3-79-97-102-189.ngrok-free.app/pl/home</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://a9d3-79-97-102-189.ngrok-free.app/en/home"/>
+    </url>
+    <url>
+        <loc>https://a9d3-79-97-102-189.ngrok-free.app/pl/offer</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://a9d3-79-97-102-189.ngrok-free.app/en/offer"/>
+    </url>
+    <url>
+        <loc>https://a9d3-79-97-102-189.ngrok-free.app/pl/process</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://a9d3-79-97-102-189.ngrok-free.app/en/process"/>
+    </url>
+    <url>
+        <loc>https://a9d3-79-97-102-189.ngrok-free.app/pl/about</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://a9d3-79-97-102-189.ngrok-free.app/en/about"/>
+    </url>
+
+    <!-- English Pages -->
+    <url>
+        <loc>https://a9d3-79-97-102-189.ngrok-free.app/en/home</loc>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://a9d3-79-97-102-189.ngrok-free.app/pl/home"/>
+    </url>
+    <url>
+        <loc>https://a9d3-79-97-102-189.ngrok-free.app/en/offer</loc>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://a9d3-79-97-102-189.ngrok-free.app/pl/offer"/>
+    </url>
+    <url>
+        <loc>https://a9d3-79-97-102-189.ngrok-free.app/en/process</loc>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://a9d3-79-97-102-189.ngrok-free.app/pl/process"/>
+    </url>
+    <url>
+        <loc>https://a9d3-79-97-102-189.ngrok-free.app/en/about</loc>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://a9d3-79-97-102-189.ngrok-free.app/pl/about"/>
+    </url>
+</urlset>

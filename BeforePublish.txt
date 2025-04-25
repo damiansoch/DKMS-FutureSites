@@ -1,0 +1,3 @@
+change site to life in index.html
+change site to life in sitemap.xml
+change site to life in robots.txt

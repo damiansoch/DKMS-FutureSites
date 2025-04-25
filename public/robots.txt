@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://a9d3-79-97-102-189.ngrok-free.app/sitemap.xml
+Sitemap: https://website-factory.onrender.com/sitemap.xml

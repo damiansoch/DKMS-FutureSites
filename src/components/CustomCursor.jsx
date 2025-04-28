@@ -7,6 +7,14 @@ const CustomCursor = () => {
     const cursorY = useMotionValue(-100);
     const [mousePosition, setMousePosition] = useState({x: -100, y: -100});
 
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const [isClicked, setIsClicked] = useState(false);
     const [isHovering, setIsHovering] = useState(false);
 
@@ -51,6 +59,9 @@ const CustomCursor = () => {
             document.removeEventListener('mouseout', handleMouseLeave);
         };
     }, [cursorX, cursorY]);
+
+
+    if (isMobile) return null; // ⬅️ Don't show CustomCursor on mobile
 
     return (
         <>

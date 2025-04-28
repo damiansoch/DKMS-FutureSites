@@ -28,6 +28,13 @@ body, button, a {
     cursor: none;
 }
 
+/* ⬇️ Enable real cursor on small screens */
+@media (max-width: 767px) {
+    body, button, a {
+        cursor: auto;
+    }
+}
+
 .navbar-nav .nav-link {
     font-size: 0.9rem;
     white-space: nowrap;

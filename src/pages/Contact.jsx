@@ -19,8 +19,7 @@ const Contact = () => {
 
     const formRef = useRef(null);
     const {language} = useLanguage();
-    const [key, setKey] = useState(Date.now());
-    const navigate = useNavigate();
+
 
     const translations = {
         en: {
@@ -55,16 +54,6 @@ const Contact = () => {
 
     const t = translations[language];
 
-    useEffect(() => {
-        const submitted = sessionStorage.getItem('formSubmitted');
-        if (submitted === 'true') {
-            setStatusVisible(true);
-            sessionStorage.removeItem('formSubmitted');
-            if (formRef.current) {  // 🛡️ Check if it exists first
-                formRef.current.reset();
-            }
-        }
-    }, [key]);
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -88,7 +77,13 @@ const Contact = () => {
         }
 
         // 🟰 No e.preventDefault() if no errors → allow normal Formspree POST
-        sessionStorage.setItem('formSubmitted', 'true');
+        // Show the success message immediately
+        setStatusVisible(true);
+
+        // Delay the form reset by 1 second (1000 milliseconds)
+        setTimeout(() => {
+            formRef.current.reset();
+        }, 1500); // Adjust the delay time as needed
     };
 
 

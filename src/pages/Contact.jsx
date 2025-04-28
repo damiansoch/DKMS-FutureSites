@@ -269,8 +269,9 @@ const Contact = () => {
 
                                                         // Small random Y wiggle (keep it light)
                                                         const targetY = (Math.random() - 0.5) * 40; // between -20 and +20
-
-                                                        setButtonPosition({x: targetX, y: targetY});
+                                                        if (!isMobile) {
+                                                            setButtonPosition({x: targetX, y: targetY});
+                                                        }
                                                     }
                                                 }}
 

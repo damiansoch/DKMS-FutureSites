@@ -16,23 +16,23 @@ const ParticlesBackground = () => {
                 background: {color: {value: 'transparent'}},
                 fpsLimit: 60,
                 particles: {
-                    number: {value: 60},
+                    number: {value: 200},
                     color: {value: '#00ffff'},
-                    opacity: {value: 0.4},
-                    size: {value: 4},
+                    opacity: {value: 0.3},
+                    size: {value: 5},
                     move: {
                         enable: true,
                         speed: 0.2,
                         direction: 'none',
                         random: false,
-                        straight: false,
-                        outModes: {default: 'out'},
+                        straight: true,
+                        outModes: {default: 'in'},
                     },
                     links: {
                         enable: true,
                         color: '#00ffff',
-                        distance: 130,
-                        opacity: 0.2,
+                        distance: 100,
+                        opacity: 0.3,
                         width: 1.5,
                     },
                 },
@@ -40,11 +40,11 @@ const ParticlesBackground = () => {
                     events: {
                         onHover: {
                             enable: true,
-                            mode: 'grab',
+                            mode: "grab",
                             parallax: {
                                 enable: true,
-                                force: 60,
-                                smooth: 10,
+                                force: 80,
+                                smooth: 5,
                             },
                         },
                         onClick: {
@@ -52,15 +52,15 @@ const ParticlesBackground = () => {
                             mode: 'grab',
                             parallax: {
                                 enable: true,
-                                force: 60,
-                                smooth: 10,
+                                force: 80,
+                                smooth: 5,
                             },
                         },
                         resize: true,
                     },
                     modes: {
                         grab: {
-                            distance: 150,
+                            distance: 200,
                             links: {opacity: 0.6},
                         },
                     },

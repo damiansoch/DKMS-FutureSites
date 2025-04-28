@@ -32,11 +32,13 @@ const BottomNav = () => {
         {path: `/${currentLanguage}/about`, icon: aboutIcon, label: currentLanguage === 'pl' ? 'Bio' : 'About'},
     ];
 
+    console.log(location.pathname);
+
     return (
         <nav
             className="bottom-nav"
             style={{
-                paddingRight: hideBottomNav ? '70px' : '0',
+                paddingRight: !location.pathname.includes('/process') ? 0 : hideBottomNav ? '70px' : '0',
                 transition: 'padding 0.3s ease',
             }}
         >
@@ -66,7 +68,7 @@ const BottomNav = () => {
             >
                 <div style={{position: 'relative'}}>
                     <img
-                        src={currentLanguage === 'en' ? plFlag : gbFlag}
+                        src={currentLanguage === 'en' ? gbFlag : plFlag}
                         alt="Toggle language"
                         className="nav-icon"
                         style={{

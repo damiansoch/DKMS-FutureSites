@@ -128,6 +128,16 @@ const Navbar = () => {
                                 />
                                 {language === 'pl' ? 'Oferta' : 'Offer'}
                             </Link>
+                            <Link to={`/${language}/about`} onClick={() => setMenuOpen(false)}
+                                  className={`nav-link d-flex align-items-center justify-content-center w-100  ${location.pathname.includes('/about') ? 'text-white-50 pointer-events-none' : 'text-white'}`}>
+                                <img src={aboutIcon} alt="About" style={{
+                                    width: '50px',
+                                    height: '50px',
+                                    opacity: location.pathname.includes('/about') ? "0.5" : 1
+                                }}
+                                />
+                                {language === 'pl' ? 'Bio' : 'About'}
+                            </Link>
                             <Link to={`/${language}/contact`} state={{from: location.pathname}}
                                   onClick={() => setMenuOpen(false)}
                                   className={`nav-link d-flex align-items-center justify-content-center w-100  ${location.pathname.includes('/contact') ? 'text-white-50 pointer-events-none' : 'text-white'}`}>
@@ -139,16 +149,7 @@ const Navbar = () => {
                                 />
                                 {language === 'pl' ? 'Kontakt' : 'Contact'}
                             </Link>
-                            <Link to={`/${language}/about`} onClick={() => setMenuOpen(false)}
-                                  className={`nav-link d-flex align-items-center justify-content-center w-100  ${location.pathname.includes('/about') ? 'text-white-50 pointer-events-none' : 'text-white'}`}>
-                                <img src={aboutIcon} alt="About" style={{
-                                    width: '50px',
-                                    height: '50px',
-                                    opacity: location.pathname.includes('/about') ? "0.5" : 1
-                                }}
-                                />
-                                {language === 'pl' ? 'Bio' : 'About'}
-                            </Link>
+
                         </div>
 
 
@@ -210,7 +211,7 @@ const Navbar = () => {
 
                                         {/* Language icon on top */}
                                         <img
-                                            src={language === 'en' ? plFlag : gbFlag}
+                                            src={language === 'en' ? gbFlag : plFlag}
                                             alt="Toggle language"
                                             style={{
                                                 width: '60px',

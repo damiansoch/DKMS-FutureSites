@@ -24,6 +24,10 @@ html, body, * {
     line-height: 1.6;
 }
 
+body, button, a {
+    cursor: none;
+}
+
 .navbar-nav .nav-link {
     font-size: 0.9rem;
     white-space: nowrap;
@@ -278,4 +282,33 @@ select:-webkit-autofill {
 /* Optional: smooth text color if autofilled */
 input:-webkit-autofill::first-line {
     color: #ffffff;
+}
+
+.smaller-input {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 0.75rem !important;
+    height: 38px !important;
+}
+
+.smaller-textarea {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 0.75rem !important;
+    height: 120px !important;
+    resize: none;
+}
+
+::placeholder {
+    color: #343a40 !important; /* darker gray or even black */
+    opacity: 1; /* important: make sure it's fully visible */
+}
+
+/*COPYRIGHT NOTE*/
+.copyright-note {
+    position: fixed;
+    bottom: 10px;
+    right: 70px;
+    font-size: 0.75rem;
+    opacity: 0.6;
+    z-index: 1000;
+    pointer-events: none; /* So it doesn't block clicks */
 }

@@ -1,0 +1,23 @@
+import {useUI} from "../Context/UIContext.jsx";
+import {useEffect, useState} from "react";
+
+function CopyrightNote() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    return (
+        <div className="copyright-note"
+             style={isMobile ? {bottom: "60px", right: "10px"} : {bottom: "10px", right: "60px"}}>
+            © {new Date().getFullYear()} DKMS FutureSites
+        </div>
+    );
+}
+
+export default CopyrightNote;

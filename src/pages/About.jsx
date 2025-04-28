@@ -104,6 +104,7 @@ const About = () => {
                                 initial={{opacity: 0, y: 20}}
                                 animate={{opacity: 1, y: 0}}
                                 transition={{delay: 0.3 + i * 0.2, duration: 0.5}}
+                                style={{textShadow: '1px 1px 4px black'}}
                             >
                                 {p}
                             </motion.p>

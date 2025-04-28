@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {motion, useMotionValue, useSpring} from 'framer-motion';
 
 import {useLanguage} from '../Context/LanguageContext.jsx';
 
@@ -10,22 +11,23 @@ import HomeBkgPlMobile from '../assets/HomeBkg_pl_mobile.png';
 import EntryAnimationProvider from "../Functions/EntryAnimationProvider.jsx";
 import SEOHelmet from "../components/SEO/SEOHelmet.jsx";
 
-
 const Home = () => {
     const {language} = useLanguage();
     const [backgroundImage, setBackgroundImage] = useState(HomeBkgEn);
-    const [cursorPos, setCursorPos] = useState({x: -1000, y: -1000});
-
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    // Motion values for parallax
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+    const springX = useSpring(x, {stiffness: 50, damping: 20});
+    const springY = useSpring(y, {stiffness: 50, damping: 20});
 
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 768);
         };
 
-        // Run on mount
         handleResize();
-
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
@@ -46,29 +48,32 @@ const Home = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, [language]);
 
-    const handleMouseMove = (e) => {
-        setCursorPos({x: e.clientX, y: e.clientY});
-    };
+    // Parallax effect: track mouse movement
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            const {innerWidth, innerHeight} = window;
+            const offsetX = (e.clientX - innerWidth / 2) / (innerWidth / 2);
+            const offsetY = (e.clientY - innerHeight / 2) / (innerHeight / 2);
 
-    const handleTouchMove = (e) => {
-        const touch = e.touches[0];
-        if (touch) {
-            setCursorPos({x: touch.clientX, y: touch.clientY});
-        }
-    };
+            x.set(offsetX * 20); // Adjust intensity
+            y.set(offsetY * 20);
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, [x, y]);
 
     return (
         <EntryAnimationProvider>
             <SEOHelmet page="home"/>
 
-            <div
-                onMouseMove={handleMouseMove}
-                onTouchMove={handleTouchMove}
+            {/* The parallax wrapper */}
+            <motion.div
                 style={{
                     marginTop: isMobile ? 0 : "60px",
                     marginBottom: isMobile ? "60px" : 0,
                     backgroundImage: `url(${backgroundImage})`,
-                    backgroundSize: "100% 100%",
+                    backgroundSize: "110% 110%",
                     backgroundPosition: "center",
                     height: 'calc(100dvh - 60px)',
                     width: '100%',
@@ -79,7 +84,10 @@ const Home = () => {
                     textAlign: 'center',
                     padding: '2rem',
                     position: 'relative',
-                    overflow: 'hidden',
+                    // overflow: 'hidden',
+                    x: springX,
+                    y: springY,
+
                 }}
             >
                 <div
@@ -90,15 +98,10 @@ const Home = () => {
                         width: '100%',
                         height: '100%',
                         pointerEvents: 'none',
-                        backdropFilter: 'grayscale(1) blur(10px)',
-                        WebkitBackdropFilter: 'grayscale(1) blur(10px)',
-                        maskImage: `radial-gradient(circle 200px at ${cursorPos.x}px ${cursorPos.y}px, black 0%, transparent 50%)`,
-                        WebkitMaskImage: `radial-gradient(circle 200px at ${cursorPos.x}px ${cursorPos.y}px, black 0%, transparent 50%)`,
-                        transition: 'mask-image 0.1s ease-out, -webkit-mask-image 0.1s ease-out',
                         zIndex: 2,
                     }}
                 />
-            </div>
+            </motion.div>
         </EntryAnimationProvider>
     );
 };

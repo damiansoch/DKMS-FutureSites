@@ -84,20 +84,23 @@ const Offer = () => {
                         initial="hidden"
                         animate="visible"
                     >
-                        <motion.h1 className="mb-4 gradient-text" variants={itemVariants}>
+                        <motion.h1 className="mb-4 gradient-text" variants={itemVariants}
+                                   style={{textShadow: '1px 1px 4px black'}}
+                        >
                             {t.title}
                         </motion.h1>
 
                         <motion.div className="lead mb-5" variants={itemVariants}>
                             {t.intro.split('\n\n').map((line, i) => (
-                                <motion.p key={i} variants={itemVariants} className="mb-3">{line}</motion.p>
+                                <motion.p key={i} variants={itemVariants} className="mb-3"
+                                          style={{textShadow: '1px 1px 4px black'}}>{line}</motion.p>
                             ))}
                         </motion.div>
 
                         <Row className="justify-content-center align-items-center h-100">
                             <Col md={5} className="mb-4 ">
                                 <motion.div variants={itemVariants}>
-                                    <Card className="gradient-card ">
+                                    <Card className="gradient-card " style={{textShadow: '1px 1px 4px black'}}>
                                         <Card.Body>
                                             <Card.Title>{t.infoTitle}</Card.Title>
                                             <Card.Text>{t.infoText}</Card.Text>
@@ -108,7 +111,7 @@ const Offer = () => {
 
                             <Col md={5} className="mb-4">
                                 <motion.div variants={itemVariants}>
-                                    <Card className="gradient-card ">
+                                    <Card className="gradient-card " style={{textShadow: '1px 1px 4px black'}}>
                                         <Card.Body>
                                             <Card.Title>{t.backendTitle}</Card.Title>
                                             <Card.Text>{t.backendText}</Card.Text>
@@ -118,8 +121,9 @@ const Offer = () => {
                             </Col>
                         </Row>
 
-                        <motion.p className="mt-4" variants={itemVariants}>
-                            <strong>{language === 'pl' ? 'Cennik:' : 'Pricing:'}</strong> {t.pricing}
+                        <motion.p className="mt-4" variants={itemVariants} style={{textShadow: '1px 1px 4px black'}}>
+                            <strong
+                            >{language === 'pl' ? 'Cennik:' : 'Pricing:'}</strong> {t.pricing}
                         </motion.p>
                     </motion.div>
                 </Container>

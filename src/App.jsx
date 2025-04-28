@@ -18,6 +18,8 @@ import {UIProvider} from './Context/UIContext.jsx';
 
 import logo from './assets/fabryka_stron_logo.png';
 import Contact from "./pages/Contact.jsx";
+import CopyrightNote from "./components/CopyrightNote.jsx";
+import CustomCursor from "./components/CustomCursor.jsx";
 
 function App() {
     // Set <html lang="pl"> by default (SEO)
@@ -81,8 +83,8 @@ function App() {
                             </div>
                         )}
                     </div>
-
-                    <div>
+                    <CopyrightNote/>
+                    <div className="overflow-hidden">
                         <Routes>
                             <Route path="/:lang/home" element={<Home/>}/>
                             <Route path="/:lang/process" element={<Process/>}/>
@@ -97,6 +99,7 @@ function App() {
                             <Route path="*" element={<Navigate to="/pl/home" replace/>}/>
                         </Routes>
                     </div>
+                    <CustomCursor/>
                 </UIProvider>
             </AuthProvider>
         </HelmetProvider>

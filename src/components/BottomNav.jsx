@@ -24,12 +24,13 @@ const BottomNav = () => {
             label: currentLanguage === 'pl' ? 'Proces' : 'Process'
         },
         {path: `/${currentLanguage}/offer`, icon: offerIcon, label: currentLanguage === 'pl' ? 'Oferta' : 'Offer'},
+
+        {path: `/${currentLanguage}/about`, icon: aboutIcon, label: currentLanguage === 'pl' ? 'Bio' : 'About'},
         {
             path: `/${currentLanguage}/contact`,
             icon: contactIcon,
             label: currentLanguage === 'pl' ? 'Kontakt' : 'Contact'
         },
-        {path: `/${currentLanguage}/about`, icon: aboutIcon, label: currentLanguage === 'pl' ? 'Bio' : 'About'},
     ];
 
     console.log(location.pathname);

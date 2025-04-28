@@ -18,7 +18,7 @@ const ParticlesBackground = () => {
                 particles: {
                     number: {value: 200},
                     color: {value: '#00ffff'},
-                    opacity: {value: 0.3},
+                    opacity: {value: 0.1},
                     size: {value: 5},
                     move: {
                         enable: true,
@@ -32,7 +32,7 @@ const ParticlesBackground = () => {
                         enable: true,
                         color: '#00ffff',
                         distance: 100,
-                        opacity: 0.3,
+                        opacity: 0.1,
                         width: 1.5,
                     },
                 },

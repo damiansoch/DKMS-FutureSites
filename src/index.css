@@ -1,40 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 
-body {
-
-    line-height: 1.6;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-    background-image: url('assets/background.png') !important;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: white; /* Optional: for better readability */
-}
-
-html, body, * {
-    font-family: 'Patrick Hand', cursive !important;
-    font-size: 18px;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    line-height: 1.6;
-}
-
-body, button, a {
-    cursor: none;
-}
-
-/* ⬇️ Enable real cursor on small screens */
-@media (max-width: 767px) {
-    body, button, a {
-        cursor: auto;
-    }
-}
-
 .navbar-nav .nav-link {
     font-size: 0.9rem;
     white-space: nowrap;
@@ -276,20 +242,7 @@ body, button, a {
 }
 
 /*CONTACT*/
-/* Fix autofill styles */
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-    background-color: rgba(255, 255, 255, 0.04) !important;
-    -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.04) inset !important;
-    -webkit-text-fill-color: #ffffff !important;
-    transition: background-color 5000s ease-in-out 0s;
-}
 
-/* Optional: smooth text color if autofilled */
-input:-webkit-autofill::first-line {
-    color: #ffffff;
-}
 
 .smaller-input {
     font-size: 0.85rem !important;
@@ -305,7 +258,7 @@ input:-webkit-autofill::first-line {
 }
 
 ::placeholder {
-    color: #343a40 !important; /* darker gray or even black */
+    color: rgba(80, 80, 80, 0.4) !important; /* darker gray or even black */
     opacity: 1; /* important: make sure it's fully visible */
 }
 

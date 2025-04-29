@@ -3,13 +3,13 @@ import React, {useEffect, useState} from 'react';
 
 import {Container} from 'react-bootstrap';
 import {motion} from 'framer-motion';
-import {useLanguage} from '../Context/LanguageContext';
-import EntryAnimationProvider from "../Functions/EntryAnimationProvider.jsx";
-import SEOHelmet from "../components/SEO/SEOHelmet.jsx";
+import {useLanguage} from '../../Context/LanguageContext.jsx';
+import EntryAnimationProvider from "../../Functions/EntryAnimationProvider.jsx";
+import SEOHelmet from "../../components/SEO/SEOHelmet.jsx";
 import {FaHandPointer, FaRegHandPointUp} from 'react-icons/fa';
 
-import BSODJokeOverlay from "../components/AboutComponents/BSODJokeOverlay.jsx";
-import ParticlesBackground from "../components/AboutComponents/ParticlesBackground.jsx";
+import BSODJokeOverlay from "../../components/AboutComponents/BSODJokeOverlay.jsx";
+import ParticlesBackground from "../../components/AboutComponents/ParticlesBackground.jsx";
 import {useNavigate} from "react-router-dom";
 
 const paragraphsEN = [

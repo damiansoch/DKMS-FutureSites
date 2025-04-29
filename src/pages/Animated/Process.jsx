@@ -1,7 +1,7 @@
-import CardSlider from "../components/ProcessComponents/CardSlider";
-import SEOHelmet from "../components/SEO/SEOHelmet.jsx";
+import CardSlider from "../../components/ProcessComponents/CardSlider.jsx";
+import SEOHelmet from "../../components/SEO/SEOHelmet.jsx";
 import React, {useEffect, useState} from "react";
-import ParticlesBackground from "../components/AboutComponents/ParticlesBackground.jsx";
+import ParticlesBackground from "../../components/AboutComponents/ParticlesBackground.jsx";
 
 
 const Process = () => {

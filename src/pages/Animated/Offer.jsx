@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react';
 import {Container, Row, Col, Card} from 'react-bootstrap';
 // eslint-disable-next-line
 import {motion} from 'framer-motion';
-import EntryAnimationProvider from "../Functions/EntryAnimationProvider.jsx";
-import {useLanguage} from '../Context/LanguageContext';
-import SEOHelmet from "../components/SEO/SEOHelmet.jsx";
-import ParticlesBackground from "../components/AboutComponents/ParticlesBackground.jsx";
+import EntryAnimationProvider from "../../Functions/EntryAnimationProvider.jsx";
+import {useLanguage} from '../../Context/LanguageContext.jsx';
+import SEOHelmet from "../../components/SEO/SEOHelmet.jsx";
+import ParticlesBackground from "../../components/AboutComponents/ParticlesBackground.jsx";
 
 const containerVariants = {
     hidden: {opacity: 0, y: 40},

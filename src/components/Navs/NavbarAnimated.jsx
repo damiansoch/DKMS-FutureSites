@@ -1,27 +1,27 @@
 import {useState, useRef, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import {useAuth} from '../auth';
+import {useAuth} from '../../auth.jsx';
 import {Navbar as RBNavbar, Container, Nav, Button} from 'react-bootstrap';
-import {useLanguage} from '../Context/LanguageContext';
+import {useLanguage} from '../../Context/LanguageContext.jsx';
 import {useLocation} from 'react-router-dom';
-import logo from '../assets/fabryka_stron_logo.png';
+import logo from '../../assets/fabryka_stron_logo.png';
 
-import mainNavCustomBurger from '../assets/icons/mainNavCustomBurger.png';
-import closeBurger from '../assets/icons/closeBurger.png';
-import homeIcon from '../assets/icons/home_icn.png';
-import progressIcon from '../assets/icons/processIcn.png';
-import offerIcon from '../assets/icons/OfferIcn.png';
-import aboutIcon from '../assets/icons/aboutIcn.png';
-import contactIcon from '../assets/icons/contact.png';
+import mainNavCustomBurger from '../../assets/icons/mainNavCustomBurger.png';
+import closeBurger from '../../assets/icons/closeBurger.png';
+import homeIcon from '../../assets/icons/home_icn.png';
+import progressIcon from '../../assets/icons/processIcn.png';
+import offerIcon from '../../assets/icons/OfferIcn.png';
+import aboutIcon from '../../assets/icons/aboutIcn.png';
+import contactIcon from '../../assets/icons/contact.png';
 // import loginIcn from '../assets/icons/logInIcn.png'
 // import registerIcn from '../assets/icons/registerIcn.png'
 // import logoutIcn from '../assets/icons/logoutIcn.png'
 
-import plFlag from '../assets/icons/plFlag.png';
-import gbFlag from '../assets/icons/gbFlag.png';
+import plFlag from '../../assets/icons/plFlag.png';
+import gbFlag from '../../assets/icons/gbFlag.png';
 
 
-const Navbar = () => {
+const NavbarAnimated = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const navRef = useRef(null);
 
@@ -234,4 +234,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavbarAnimated;

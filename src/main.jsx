@@ -5,13 +5,16 @@ import App from './App.jsx'
 import {BrowserRouter} from "react-router-dom";
 import "./bootstrap.min.css"
 import LanguageProvider from './Context/LanguageContext';
+import {VersionProvider} from "./Context/VersionContext.jsx";
 
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
         <BrowserRouter>
             <LanguageProvider>
-                <App/>
+                <VersionProvider>
+                    <App/>
+                </VersionProvider>
             </LanguageProvider>
         </BrowserRouter>
     </StrictMode>

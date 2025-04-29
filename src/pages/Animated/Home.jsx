@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {motion, useMotionValue, useSpring} from 'framer-motion';
 
-import {useLanguage} from '../Context/LanguageContext.jsx';
+import {useLanguage} from '../../Context/LanguageContext.jsx';
 
-import HomeBkgEn from '../assets/HomeBkg_en.png';
-import HomeBkgPl from '../assets/HomeBkg_pl.png';
-import HomeBkgEnMobile from '../assets/HomeBkg_en_mobile.png';
-import HomeBkgPlMobile from '../assets/HomeBkg_pl_mobile.png';
+import HomeBkgEn from '../../assets/HomeBkg_en.png';
+import HomeBkgPl from '../../assets/HomeBkg_pl.png';
+import HomeBkgEnMobile from '../../assets/HomeBkg_en_mobile.png';
+import HomeBkgPlMobile from '../../assets/HomeBkg_pl_mobile.png';
 
-import EntryAnimationProvider from "../Functions/EntryAnimationProvider.jsx";
-import SEOHelmet from "../components/SEO/SEOHelmet.jsx";
+import EntryAnimationProvider from "../../Functions/EntryAnimationProvider.jsx";
+import SEOHelmet from "../../components/SEO/SEOHelmet.jsx";
 
 const Home = () => {
     const {language} = useLanguage();

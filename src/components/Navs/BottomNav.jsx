@@ -1,15 +1,15 @@
 import {Link, useLocation} from 'react-router-dom';
-import homeIcon from '../assets/icons/home_icn.png';
-import progressIcon from '../assets/icons/processIcn.png';
-import offerIcon from '../assets/icons/OfferIcn.png';
-import aboutIcon from '../assets/icons/aboutIcn.png';
-import contactIcon from '../assets/icons/contact.png';
+import homeIcon from '../../assets/icons/home_icn.png';
+import progressIcon from '../../assets/icons/processIcn.png';
+import offerIcon from '../../assets/icons/OfferIcn.png';
+import aboutIcon from '../../assets/icons/aboutIcn.png';
+import contactIcon from '../../assets/icons/contact.png';
 
-import plFlag from '../assets/icons/plFlag.png';
-import gbFlag from '../assets/icons/gbFlag.png';
+import plFlag from '../../assets/icons/plFlag.png';
+import gbFlag from '../../assets/icons/gbFlag.png';
 
-import {useLanguage} from '../Context/LanguageContext';
-import {useUI} from '../Context/UIContext';
+import {useLanguage} from '../../Context/LanguageContext.jsx';
+import {useUI} from '../../Context/UIContext.jsx';
 
 const BottomNav = () => {
     const location = useLocation();

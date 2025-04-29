@@ -2,24 +2,35 @@ import {useEffect} from 'react';
 import {Routes, Route, Navigate, useLocation} from 'react-router-dom';
 import {Helmet, HelmetProvider} from 'react-helmet-async';
 
-import Navbar from './components/Navbar';
-import BottomNav from './components/BottomNav';
+import NavbarAnimated from './components/Navs/NavbarAnimated.jsx';
+import BottomNav from './components/Navs/BottomNav.jsx';
 
-import Process from './pages/Process.jsx';
+import Process from './pages/Animated/Process.jsx';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
-import Offer from "./pages/Offer.jsx";
-import About from "./pages/About.jsx";
-import Home from "./pages/Home.jsx";
+import Offer from "./pages/Animated/Offer.jsx";
+import About from "./pages/Animated/About.jsx";
+import Home from "./pages/Animated/Home.jsx";
 
 import RedirectGoogleAuth from './GoogleRedirectHandler';
+
 import {AuthProvider} from './auth';
 import {UIProvider} from './Context/UIContext.jsx';
 
+import {useVersion} from "./Context/VersionContext.jsx";
+
 import logo from './assets/fabryka_stron_logo.png';
-import Contact from "./pages/Contact.jsx";
+import Contact from "./pages/Animated/Contact.jsx";
 import CopyrightNote from "./components/CopyrightNote.jsx";
 import CustomCursor from "./components/CustomCursor.jsx";
+import VersionSelectorButton from "./components/VersionComponents/VersionSelectorButton.jsx";
+import HomeProfessional from "./pages/Professional/HomeProfessional.jsx";
+
+
+import {AnimatedGlobalStyle, ProfessionalGlobalStyle} from "./components/styles/AnimatedGlobalStyle.jsx";
+import NavbarProfessional from "./components/Navs/NavbarProfessional.jsx";
+
+""
 
 function App() {
     // Set <html lang="pl"> by default (SEO)
@@ -32,10 +43,14 @@ function App() {
     const location = useLocation();
     const isHomePage = location.pathname.endsWith('/home');
 
+    const {version} = useVersion();
+
+
     return (
         <HelmetProvider>
             <AuthProvider>
                 <UIProvider>
+
                     <Helmet>
                         <meta name="viewport" content="width=device-width, initial-scale=1"/>
                         <meta name="theme-color" content="#141A26"/>
@@ -48,14 +63,22 @@ function App() {
                         <meta name="twitter:image" content="/images/og-default.png"/>
                     </Helmet>
 
-                    {/* Desktop navbar only */}
-                    <div className="d-none d-md-block">
-                        <Navbar/>
-                    </div>
+                    {/* Navbar - different for each version */}
+                    {version === "animated" ? (
+                        <div className="d-none d-md-block">
+                            <NavbarAnimated/>
+                        </div>
+                    ) : version === "professional" ? (
+                        <NavbarProfessional/>
+                    ) : null}
+
 
                     {/* Mobile bottom navigation */}
                     <div className="d-md-none">
-                        <BottomNav/>
+                        {version === "animated" && <AnimatedGlobalStyle/>}
+                        {version === "professional" && <ProfessionalGlobalStyle/>}
+                        {version === "animated" && <BottomNav/>}
+
                         {/* Centered logo for mobile */}
                         {!isHomePage && (
                             <div className="d-md-none">
@@ -85,21 +108,31 @@ function App() {
                     </div>
                     <CopyrightNote/>
                     <div className="overflow-hidden">
-                        <Routes>
-                            <Route path="/:lang/home" element={<Home/>}/>
-                            <Route path="/:lang/process" element={<Process/>}/>
-                            <Route path="/:lang/offer" element={<Offer/>}/>
-                            <Route path="/:lang/about" element={<About/>}/>
-                            <Route path="/:lang/contact" element={<Contact/>}/>
-                            <Route path="/:lang/login" element={<Login/>}/>
-                            <Route path="/:lang/register" element={<Register/>}/>
-                            <Route path="/login/callback" element={<RedirectGoogleAuth/>}/>
+                        {version === "animated" ? (
+                            <Routes>
+                                <Route path="/:lang/home" element={<Home/>}/>
+                                <Route path="/:lang/process" element={<Process/>}/>
+                                <Route path="/:lang/offer" element={<Offer/>}/>
+                                <Route path="/:lang/about" element={<About/>}/>
+                                <Route path="/:lang/contact" element={<Contact/>}/>
+                                <Route path="/:lang/login" element={<Login/>}/>
+                                <Route path="/:lang/register" element={<Register/>}/>
+                                <Route path="/login/callback" element={<RedirectGoogleAuth/>}/>
 
-                            {/* Fallback: redirect to /pl/home */}
-                            <Route path="*" element={<Navigate to="/pl/home" replace/>}/>
-                        </Routes>
+                                {/* Fallback: redirect to /pl/home */}
+                                <Route path="*" element={<Navigate to="/pl/home" replace/>}/>
+                            </Routes>
+                        ) : version === "professional" ? (
+                            <Routes>
+                                <Route path="/:lang/home" element={<HomeProfessional/>}/>
+                            </Routes>
+                        ) : null}
+
                     </div>
-                    <CustomCursor/>
+                    <VersionSelectorButton/>
+                    {version === "animated" && <CustomCursor/>}
+
+
                 </UIProvider>
             </AuthProvider>
         </HelmetProvider>

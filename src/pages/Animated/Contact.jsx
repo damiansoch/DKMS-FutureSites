@@ -2,10 +2,10 @@ import React, {useEffect, useState, useRef} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {Form, Button} from 'react-bootstrap';
 import {motion} from 'framer-motion';
-import ParticlesBackground from "../components/AboutComponents/ParticlesBackground.jsx";
-import StatusOverlay from "../components/ContactComponents/StatusOverlay.jsx";
-import {useLanguage} from '../Context/LanguageContext';
-import EntryAnimationProvider from "../Functions/EntryAnimationProvider.jsx";
+import ParticlesBackground from "../../components/AboutComponents/ParticlesBackground.jsx";
+import StatusOverlay from "../../components/ContactComponents/StatusOverlay.jsx";
+import {useLanguage} from '../../Context/LanguageContext.jsx';
+import EntryAnimationProvider from "../../Functions/EntryAnimationProvider.jsx";
 
 const borderAnimDuration = 0.8;
 

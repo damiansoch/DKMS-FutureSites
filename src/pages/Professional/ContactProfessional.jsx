@@ -147,7 +147,7 @@ const ContactProfessional = () => {
                                 padding: '2rem',
                                 borderRadius: '1rem',
                                 boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-                                border: `1px solid ${theme.titleLine}`,
+                                // border: `1px solid ${theme.titleLine}`,
                                 color: theme.textColor,
                             }}
                         >

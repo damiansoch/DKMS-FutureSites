@@ -139,47 +139,63 @@ const Offer = () => {
 
                     {/* Cards */}
                     <Row className="justify-content-center align-items-center h-100">
-                        <Col md={5} className="mb-4">
-                            <motion.div variants={itemVariants}>
-                                <Card
-                                    className="h-100"
+                        {[{
+                            title: t.infoTitle,
+                            text: t.infoText,
+                        }, {
+                            title: t.backendTitle,
+                            text: t.backendText,
+                        }].map((card, index) => (
+                            <Col md={5} className="mb-4" key={index}>
+                                <motion.div
+                                    variants={itemVariants}
+                                    whileHover={{scale: 1.02}}
+                                    transition={{duration: 0.3, ease: 'easeOut'}}
                                     style={{
-                                        background: isNight ? '#112b15' : '#131333',
-                                        border: `1px solid ${theme.titleLine}`,
-                                        color: isNight ? '#d8d8d8' : '#1e3a5f',
-                                        textShadow: isNight ? theme.textShadow : 'none',
                                         borderRadius: '12px',
-                                        fontSize: "small"
+                                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+                                        overflow: 'hidden',
                                     }}
                                 >
-                                    <Card.Body>
-                                        <Card.Title>{t.infoTitle}</Card.Title>
-                                        <Card.Text>{t.infoText}</Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </motion.div>
-                        </Col>
-
-                        <Col md={5} className="mb-4">
-                            <motion.div variants={itemVariants}>
-                                <Card
-                                    className="h-100"
-                                    style={{
-                                        background: isNight ? '#112b15' : '#131333',
-                                        border: `1px solid ${theme.titleLine}`,
-                                        color: isNight ? '#d8d8d8' : '#1e3a5f',
-                                        textShadow: isNight ? theme.textShadow : 'none',
-                                        borderRadius: '12px',
-                                        fontSize: "small"
-                                    }}
-                                >
-                                    <Card.Body>
-                                        <Card.Title>{t.backendTitle}</Card.Title>
-                                        <Card.Text>{t.backendText}</Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </motion.div>
-                        </Col>
+                                    <Card
+                                        className="h-100"
+                                        style={{
+                                            background: theme.cardBackground || (isNight ? 'rgba(255,255,255,0.03)' : '#f9f9f9'),
+                                            // border: `1px solid ${theme.titleLine}`,
+                                            color: theme.textColor,
+                                            textShadow: isNight ? theme.textShadow : 'none',
+                                            borderRadius: '12px',
+                                            padding: '20px',
+                                        }}
+                                    >
+                                        <Card.Body>
+                                            <Card.Title
+                                                style={{
+                                                    fontSize: '1.25rem',
+                                                    fontWeight: '600',
+                                                    color: theme.subtitleColor,
+                                                    fontFamily: "'Segoe UI', sans-serif",
+                                                    textShadow: theme.textShadow,
+                                                    marginBottom: '15px',
+                                                }}
+                                            >
+                                                {card.title}
+                                            </Card.Title>
+                                            <Card.Text
+                                                style={{
+                                                    fontSize: '1rem',
+                                                    lineHeight: '1.6',
+                                                    color: theme.textColor,
+                                                    textShadow: theme.textShadow,
+                                                }}
+                                            >
+                                                {card.text}
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </motion.div>
+                            </Col>
+                        ))}
                     </Row>
 
                     {/* Pricing Info */}

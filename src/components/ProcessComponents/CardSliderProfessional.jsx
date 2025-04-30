@@ -13,7 +13,8 @@ import num9 from '../../assets/cards_imgs/nums/9.png';
 import num10 from '../../assets/cards_imgs/nums/10.png';
 
 import {getProfessionalTheme} from "../styles/professionalTheme.jsx";
-import {motion} from 'framer-motion'; // <--- import motion
+import {motion} from 'framer-motion';
+
 
 const badgeImages = [num1, num2, num3, num4, num5, num6, num7, num8, num9, num10];
 
@@ -63,7 +64,7 @@ const CardStepsProfessional = () => {
                 }}/>
             </h1>
 
-            {/* Steps with motion.div */}
+            {/* Steps */}
             {cardData.map((card, index) => (
                 <motion.div
                     key={index}
@@ -72,90 +73,108 @@ const CardStepsProfessional = () => {
                     viewport={{amount: 0.3}}
                     transition={{duration: 0.5, ease: 'easeOut'}}
                 >
-                    <section
-                        id={`step-${index + 1}`}
+                    <motion.div
+                        key={index}
+                        initial={{opacity: 0, y: 20}}
+                        whileInView={{opacity: 1, y: 0}}
+                        whileHover={{scale: 1.02}}
+                        transition={{duration: 0.3, ease: 'easeOut'}}
+                        viewport={{amount: 0.3}}
                         style={{
-                            display: 'flex',
-                            flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
-                            alignItems: 'flex-start',
+                            backgroundColor: themeStyles.cardBackground,
+                            borderRadius: '12px',
+                            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+                            padding: '30px 20px',
                             marginBottom: '40px',
-                            gap: '20px',
-                            flexWrap: 'wrap',
+                            transition: 'transform 0.3s ease',
                         }}
                     >
-                        {/* Image */}
-                        <div style={{
-                            flex: '0 0 20%',
-                            minWidth: '140px',
-                            maxWidth: '160px',
-                            textAlign: 'center',
-                            position: 'relative',
-                        }}>
-                            <img
-                                src={card.image}
-                                alt={card.title}
+                        <section
+                            id={`step-${index + 1}`}
+                            className="card-step"
+                            style={{
+                                display: 'flex',
+                                flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
+                                alignItems: 'flex-start',
+                                gap: '20px',
+                                flexWrap: 'wrap',
+                            }}
+                        >
+                            {/* Image */}
+                            <motion.div
+                                whileHover={{scale: 1.05}}
+                                transition={{duration: 0.3}}
                                 style={{
-                                    width: '100%',
-                                    height: 'auto',
+                                    flex: '0 0 30%',
+                                    maxWidth: '200px',
+                                    textAlign: 'center',
+                                    position: 'relative',
+                                    overflow: 'hidden',
                                     borderRadius: '8px',
-                                    objectFit: 'cover',
-                                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                                    boxShadow: isNight
+                                        ? '0 0 15px rgba(0, 173, 255, 0.25)'
+                                        : '0 0 10px rgba(0, 0, 0, 0.1)',
                                 }}
-                            />
-                            <img
-                                src={badgeImages[index]}
-                                alt={`Step ${index + 1}`}
-                                style={{
-                                    position: 'absolute',
-                                    top: '-15px',
-                                    left: '50%',
-                                    transform: 'translateX(-50%)',
-                                    width: '32px',
-                                    height: '32px',
-                                    backgroundColor: themeStyles.badgeBg,
-                                    borderRadius: '50%',
-                                    padding: '4px',
-                                    boxShadow: themeStyles.badgeShadow,
-                                }}
-                            />
-                        </div>
+                            >
+                                <img
+                                    src={card.imageProf}
+                                    alt={card.title}
+                                    style={{
+                                        width: '100%',
+                                        height: 'auto',
+                                        objectFit: 'cover',
+                                        borderRadius: '8px',
+                                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                                        transition: 'transform 0.3s ease',
+                                    }}
+                                />
+                            </motion.div>
 
-                        {/* Text */}
-                        <div style={{
-                            flex: '1 1 70%',
-                            minWidth: '250px',
-                        }}>
-                            <h3 style={{
-                                fontSize: '1.5rem',
-                                marginBottom: '15px',
-                                color: themeStyles.subtitleColor,
-                                fontFamily: "'Segoe UI', sans-serif",
-                                textShadow: themeStyles.textShadow,
-                            }}>
-                                {card.title}
-                            </h3>
-                            {card.content.split('\n\n').map((paragraph, i) => (
-                                <p key={i} style={{
-                                    fontSize: '1rem',
-                                    lineHeight: '1.7',
-                                    color: themeStyles.textColor,
-                                    marginBottom: '15px',
-                                    textShadow: themeStyles.textShadow,
-                                }}>
-                                    {paragraph}
-                                </p>
-                            ))}
-                        </div>
-                    </section>
+                            {/* Text */}
+                            <div className="card-step-text" style={{flex: '1 1 70%', minWidth: '250px'}}>
+                                <h3
+                                    className="card-step-title"
+                                    style={{
+                                        fontSize: '1.5rem',
+                                        marginBottom: '15px',
+                                        color: themeStyles.subtitleColor,
+                                        fontFamily: "'Segoe UI', sans-serif",
+                                        textShadow: themeStyles.textShadow,
+                                    }}
+                                >
+                                    {card.title}
+                                </h3>
+                                {card.content.split('\n\n').map((paragraph, i) => (
+                                    <p
+                                        className="card-step-paragraph"
+                                        key={i}
+                                        style={{
+                                            fontSize: '1rem',
+                                            lineHeight: '1.7',
+                                            color: themeStyles.textColor,
+                                            marginBottom: '15px',
+                                            textShadow: themeStyles.textShadow,
+                                        }}
+                                    >
+                                        {paragraph}
+                                    </p>
+                                ))}
+                            </div>
+                        </section>
+                    </motion.div>
+
 
                     {/* Divider */}
                     {index !== cardData.length - 1 && (
-                        <div style={{
-                            height: '1px',
-                            background: themeStyles.divider,
-                            margin: '40px 0',
-                            opacity: 0.6,
-                        }}/>
+                        <div
+                            className="card-step-divider"
+                            style={{
+                                height: '1px',
+                                background: themeStyles.divider,
+                                margin: '40px 0',
+                                opacity: 0.6,
+                            }}
+                        />
                     )}
                 </motion.div>
             ))}

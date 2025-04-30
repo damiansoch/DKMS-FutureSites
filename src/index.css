@@ -272,3 +272,41 @@
     z-index: 1000;
     pointer-events: none; /* So it doesn't block clicks */
 }
+
+/*-----------------------------PROFESSIONAL ONLY-----------------------------*/
+@media (max-width: 768px) {
+    .card-step {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+    }
+
+    .card-step-image {
+        width: 80% !important;
+        max-width: 240px;
+        margin-bottom: 16px;
+    }
+
+    .card-step-badge {
+        width: 42px !important;
+        height: 42px !important;
+        top: -20px !important;
+    }
+
+    .card-step-text {
+        width: 90%;
+    }
+
+    .card-step-title {
+        font-size: 1.25rem !important;
+    }
+
+    .card-step-paragraph {
+        font-size: 1rem !important;
+        line-height: 1.6;
+    }
+
+    .card-step-divider {
+        margin: 32px 0 !important;
+    }
+}

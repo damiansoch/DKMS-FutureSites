@@ -140,8 +140,8 @@ const NavbarProfessional = () => {
                                         src={icon}
                                         alt={label}
                                         style={{
-                                            width: '50px',
-                                            height: '50px',
+                                            width: '70px',
+                                            height: '70px',
                                             borderRadius: '50%',
                                             objectFit: 'cover',
                                             position: 'relative',
@@ -152,20 +152,20 @@ const NavbarProfessional = () => {
                                             maskSize: '100% 100%',
                                         }}
                                     />
-                                    <span
-                                        style={{
-                                            fontWeight: 700,
-                                            fontSize: '1.1rem',
-                                            color: '#1e3a8a',
-                                            marginLeft: '-5px',
-                                            transform: 'translate(-5px ,10px)',
-                                            textShadow: '1px 1px 2px #ffffff, 0 0 5px #ffffff',
-                                            transition: 'transform 0.2s ease',
-                                            zIndex: 1051
-                                        }}
-                                    >
-      {label}
-    </span>
+                                    {/*                                <span*/}
+                                    {/*                                    style={{*/}
+                                    {/*                                        fontWeight: 700,*/}
+                                    {/*                                        fontSize: '1.1rem',*/}
+                                    {/*                                        color: '#1e3a8a',*/}
+                                    {/*                                        marginLeft: '-5px',*/}
+                                    {/*                                        transform: 'translate(-5px ,10px)',*/}
+                                    {/*                                        textShadow: '1px 1px 2px #ffffff, 0 0 5px #ffffff',*/}
+                                    {/*                                        transition: 'transform 0.2s ease',*/}
+                                    {/*                                        zIndex: 1051*/}
+                                    {/*                                    }}*/}
+                                    {/*                                >*/}
+                                    {/*  {label}*/}
+                                    {/*</span>*/}
                                 </Link>
                             ))}
                         </div>

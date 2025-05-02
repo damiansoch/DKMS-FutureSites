@@ -1,11 +1,14 @@
 import React, {useState, useRef} from 'react';
 import {Form} from 'react-bootstrap';
 import {motion} from 'framer-motion';
-import ParticlesBackground from "../../components/AboutComponents/ParticlesBackground.jsx";
+
+import contactBkg from "../../assets/Comic/ContactBkg.png"
+
 import StatusOverlay from "../../components/ContactComponents/StatusOverlay.jsx";
 import {useLanguage} from '../../Context/LanguageContext.jsx';
 
 import Explosion from '../../assets/Comic/icons/explosion.png';
+import bg4 from "../../assets/Comic/PagesPC/Page4_4.png";
 
 const comicInputStyle = {
     border: '2px solid #000',
@@ -87,14 +90,17 @@ const ComiContact = () => {
     return (
         <div
             style={{
-                height: 'calc(100vh - 80px)',
+                height: 'calc(100vh - 70px)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 position: 'relative',
                 overflow: 'hidden',
-                marginTop: "80px",
-                // paddingTop: "50px"
+                marginTop: "70px",
+                backgroundImage: `url(${contactBkg})`,
+                backgroundSize: '100% 100%',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
 
             }}
         >

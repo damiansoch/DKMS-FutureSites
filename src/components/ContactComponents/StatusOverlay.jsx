@@ -3,17 +3,17 @@ import {motion, AnimatePresence} from 'framer-motion';
 
 const STATUS_CONFIG = {
     success: {
-        emoji: '✅',
+        emoji: '🎉',
         color: '#28a745',
         title: 'Success!',
     },
     error: {
-        emoji: '❌',
+        emoji: '💥',
         color: '#dc3545',
         title: 'Oops!',
     },
     info: {
-        emoji: 'ℹ️',
+        emoji: '💬',
         color: '#007bff',
         title: 'Notice',
     },
@@ -39,6 +39,7 @@ const StatusOverlay = ({show, type = 'info', message, subtext, onClose}) => {
                         justifyContent: 'center',
                         alignItems: 'center',
                         padding: '1rem',
+                        fontFamily: '"Comic Neue", cursive',
                     }}
                 >
                     <motion.div
@@ -47,28 +48,37 @@ const StatusOverlay = ({show, type = 'info', message, subtext, onClose}) => {
                         exit={{opacity: 0}}
                         transition={{duration: 0.5}}
                         style={{
-                            background: 'rgba(255, 255, 255, 0.96)',
-                            padding: '2rem',
-                            borderRadius: '1rem',
-                            boxShadow: '0 8px 30px rgba(0,0,0,0.4)',
+                            background: 'radial-gradient(circle at center, #fff 60%, #ffe66d 100%)',
+                            padding: '1.5rem',
+                            border: '4px solid #000',
+                            borderRadius: '1.5rem',
+                            boxShadow: '8px 8px 0px #000',
                             textAlign: 'center',
-                            maxWidth: '450px',
+                            maxWidth: '420px',
                             width: '100%',
+                            fontFamily: '"Comic Neue", cursive',
                         }}
                     >
-                        <div style={{fontSize: '3rem', marginBottom: '1rem'}}>
+                        <div style={{fontSize: '3.5rem', marginBottom: '1rem'}}>
                             {config.emoji}
                         </div>
-                        <h3 style={{fontWeight: 600, color: '#222', marginBottom: '1rem'}}>
+                        <h3
+                            style={{
+                                fontFamily: '"Bangers", cursive',
+                                fontSize: '1.8rem',
+                                color: '#111',
+                                marginBottom: '0.5rem',
+                            }}
+                        >
                             {message || config.title}
                         </h3>
                         {subtext && (
-                            <p style={{fontSize: '1rem', color: '#444', marginBottom: '2rem'}}>
+                            <p style={{fontSize: '1rem', color: '#333', marginBottom: '1.5rem'}}>
                                 {subtext}
                             </p>
                         )}
                         <motion.button
-                            whileHover={{scale: 1.05}}
+                            whileHover={{scale: 1.05, rotate: -1}}
                             whileTap={{scale: 0.95}}
                             onClick={onClose}
                             style={{
@@ -76,10 +86,11 @@ const StatusOverlay = ({show, type = 'info', message, subtext, onClose}) => {
                                 fontSize: '1rem',
                                 backgroundColor: config.color,
                                 color: 'white',
-                                border: 'none',
+                                border: '3px solid #000',
                                 borderRadius: '50px',
                                 cursor: 'pointer',
-                                boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                                boxShadow: '4px 4px 0px #000',
+                                fontFamily: '"Bangers", cursive',
                                 width: '100%',
                                 maxWidth: '200px',
                             }}

@@ -201,6 +201,7 @@ const ComiContact = () => {
                                     width: '230px',
                                     zIndex: 1,
                                     pointerEvents: 'none',
+
                                 }}
                             />
                             <motion.button

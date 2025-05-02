@@ -35,7 +35,7 @@ const Page4 = () => {
                         backgroundRepeat: 'no-repeat',
                         position: "relative"
                     }}
-                         className=" col-5 bg-white border border-white border-4">
+                         className=" col-5 bg-black border border-white border-4">
                         <ComicCloud
                             fontSize={12}
                             padding={8}
@@ -55,7 +55,7 @@ const Page4 = () => {
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
                         position: "relative",
-                    }} className="bg-success border border-white border-4">
+                    }} className="bg-black border border-white border-4">
                         <ComicCloud
                             fontSize={12}
                             padding={8}
@@ -77,7 +77,7 @@ const Page4 = () => {
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
                         position: "relative",
-                    }} className="col-6 bg-warning border border-white border-4">
+                    }} className="col-6 bg-black border border-white border-4">
                         <ComicCloud
                             fontSize={12}
                             padding={8}
@@ -98,7 +98,7 @@ const Page4 = () => {
                         backgroundRepeat: 'no-repeat',
                         position: "relative",
                     }}
-                         className="bg-danger border border-white border-4">
+                         className="bg-black border border-white border-4">
                         <ComicCloud
                             fontSize={12}
                             padding={8}

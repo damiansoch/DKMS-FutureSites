@@ -1,6 +1,7 @@
 import React from 'react';
 import {Col, Row} from 'react-bootstrap';
 import {motion} from 'framer-motion';
+import {useNavigate} from 'react-router-dom';
 import Explosion from '../../assets/Comic/icons/explosion.png';
 
 import ComicFrame from './ComicFrame.jsx';
@@ -12,6 +13,7 @@ import ContactMeButton_pl from '../../assets/Comic/icons/ContactMeButton_pl.png'
 
 const Page8 = () => {
     const {language} = useLanguage();
+    const navigate = useNavigate();
 
     const buttonMap = {
         en: ContactMeButton_en,
@@ -30,7 +32,7 @@ const Page8 = () => {
                             backgroundRepeat: 'no-repeat',
                             position: 'relative',
                         }}
-                        className="bg-success border border-white border-4"
+                        className="bg-black border border-white border-4"
                     >
                         {/* ComiContact Button Wrapper (absolute) */}
                         <div
@@ -76,6 +78,9 @@ const Page8 = () => {
                                 whileHover={{scale: 1.1, rotate: -2}}
                                 whileTap={{scale: 0.95, rotate: 0}}
                                 transition={{type: 'spring', stiffness: 300}}
+                                onClick={() => {
+                                    navigate(`/${language}/contact`)
+                                }}
                             />
                         </div>
                     </Col>

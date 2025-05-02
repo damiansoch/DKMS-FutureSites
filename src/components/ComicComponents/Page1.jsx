@@ -17,7 +17,7 @@ const Page1 = () => {
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
                         position: "relative",
-                    }} className="bg-success border border-white border-4">
+                    }} className="bg-black border border-white border-4">
 
                     </Col>
                     <div className={` text-end`} style={{

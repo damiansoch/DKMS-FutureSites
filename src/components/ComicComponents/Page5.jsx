@@ -34,7 +34,7 @@ const Page4 = () => {
                         backgroundRepeat: 'no-repeat',
                         position: "relative"
                     }}
-                         className=" col-6 bg-white border border-white border-4">
+                         className=" col-6 bg-black border border-white border-4">
                         <ComicCloud
 
                             fontSize={14}
@@ -55,7 +55,7 @@ const Page4 = () => {
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
                         position: "relative",
-                    }} className="bg-success border border-white border-4">
+                    }} className="bg-black border border-white border-4">
                         <ComicCloud
                             fontSize={14}
                             padding={8}

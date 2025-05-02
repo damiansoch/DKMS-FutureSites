@@ -15,7 +15,10 @@ function CopyrightNote() {
     }, []);
     return (
         <div className="copyright-note"
-             style={version === "professional" ? {bottom: "10px", right: "10px"} : isMobile ? {
+             style={version === "cartoon" ? {
+                 bottom: "10px",
+                 right: "10px"
+             } : version === "professional" ? {bottom: "10px", right: "10px"} : isMobile ? {
                  bottom: "60px",
                  right: "10px"
              } : {bottom: "10px", right: "60px"}}>

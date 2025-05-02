@@ -3,9 +3,21 @@ import {motion} from 'framer-motion';
 import {FaTimes} from 'react-icons/fa';
 import {Button} from 'react-bootstrap';
 import {useVersion} from "../../Context/VersionContext.jsx";
+import {useEffect, useState} from "react";
+import {useLanguage} from "../../Context/LanguageContext.jsx";
 
 function VersionModal({onClose}) {
     const {setVersion} = useVersion();
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const {language} = useLanguage();
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handleSelect = (newVersion) => {
         setVersion(newVersion);
@@ -66,9 +78,13 @@ function VersionModal({onClose}) {
                     <Button variant="outline-light" onClick={() => handleSelect('animated')}>
                         Animated
                     </Button>
-                    <Button variant="outline-light" onClick={() => handleSelect('cartoon')}>
-                        Cartoon
-                    </Button>
+                    {!isMobile && (
+                        <Button variant="outline-light" onClick={() => handleSelect('cartoon')}>
+                            Cartoon
+                        </Button>
+                    )
+                    }
+
                 </div>
             </motion.div>
         </div>

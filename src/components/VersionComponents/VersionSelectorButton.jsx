@@ -45,6 +45,7 @@ function VersionSelectorButton() {
                     justifyContent: 'center',
                     color: 'white',
                     cursor: 'pointer',
+                    // display: "none"
                 }}
             >
                 <FaPaintBrush size={18}/>

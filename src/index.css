@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 
 .navbar-nav .nav-link {
@@ -310,3 +311,149 @@
         margin: 32px 0 !important;
     }
 }
+
+/*-----------------------------COMIC ONLY-----------------------------*/
+
+/* NavbarComic.css */
+.navbar-comic {
+    background-image: url('/images/navbarComicBg.svg') !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    height: 70px !important;
+    font-family: 'Bangers', cursive !important;
+}
+
+.mobile-menu-bg {
+    background-image: url('/images/mobileMenuComicBg.svg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.nav-link span {
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover span {
+    transform: translateX(4px) scale(1.05);
+}
+
+.page-flip-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    perspective: 1500px;
+    z-index: 5;
+}
+
+.page-flip-half {
+    width: 100%;
+    height: 100%;
+    background-color: white; /* or semi-transparent */
+    transform-style: preserve-3d;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+/*Comic carousel*/
+
+.comic-carousel-wrapper {
+    width: 100%;
+    height: 90vh;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    touch-action: none; /* 👈 This removes the warning */
+    margin-top: 70px;
+}
+
+.comic-page {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.comic-nav-container {
+    position: absolute;
+    bottom: 6%;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    padding: 0 2rem;
+}
+
+
+.comic-btn {
+    font-family: 'Bangers', cursive;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    min-width: 100px;
+    border: 3px solid black;
+    background: #fff200;
+    color: black;
+    box-shadow: 3px 3px 0 black;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    cursor: pointer;
+    /*margin: 0 auto;*/
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .comic-btn {
+        min-width: 100% !important;
+    }
+}
+
+.comic-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 black;
+}
+
+.comic-btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.comic-page-indicator {
+    position: absolute;
+    bottom: -10px;
+    left: 60px;
+    transform: translateX(-50%);
+    color: #F9B322;
+    font-family: 'Bangers', cursive;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    z-index: 20;
+    text-shadow: 2px 2px 2px black;
+}
+
+/*OUTER FRAME STYLES*/
+.comic-frame-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.comic-frame-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+

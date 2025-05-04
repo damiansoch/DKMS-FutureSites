@@ -62,9 +62,10 @@ const Offer = () => {
     };
 
     return (
+        <Container>
         <div id="offer" style={{
             padding: '20px 20px 40px',
-            maxWidth: '900px',
+            // maxWidth: '900px',
             margin: '0 auto',
             fontFamily: "'Open Sans', sans-serif",
         }}>
@@ -213,6 +214,7 @@ const Offer = () => {
                 </motion.div>
             </Container>
         </div>
+        </Container>
     );
 };
 

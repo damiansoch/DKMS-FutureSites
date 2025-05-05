@@ -11,15 +11,15 @@ import securityAndCompliance from '../../assets/cards_imgs/securityAndCompliance
 import ongoingSupport from '../../assets/cards_imgs/ongoingSupport.png'
 // Professional imports
 import projectGoalsImgProf from '../../assets/Professional/card_imgs/project_goals.jpg'
-import designAndBrandingProf from '../../assets/Professional/card_imgs/design_and_branding.jpeg'
-import contentAndStructureProf from '../../assets/Professional/card_imgs/contend_and_structure.jpeg'
-import mobileResponsivenessProf from '../../assets/Professional/card_imgs/mobileResponsiveness.jpeg'
-import performanceAndSpeedProf from '../../assets/Professional/card_imgs/performanceAndSpeed.jpeg'
-import seoOtimizationsProf from '../../assets/Professional/card_imgs/seoOptimizations.jpeg'
-import cmsAndAdminPanelProf from '../../assets/Professional/card_imgs/cmsAndAdminPanel.jpeg'
-import integrationsprof from '../../assets/Professional/card_imgs/intedrations.jpeg'
-import securityAndComplianceProf from '../../assets/Professional/card_imgs/securityAndCompliance.jpeg'
-import ongoingSupportProf from '../../assets/Professional/card_imgs/ongoingSupport.jpeg'
+import designAndBrandingProf from '../../assets/Professional/card_imgs/design_and_branding.jpg'
+import contentAndStructureProf from '../../assets/Professional/card_imgs/contend_and_structure.jpg'
+import mobileResponsivenessProf from '../../assets/Professional/card_imgs/mobileResponsiveness.jpg'
+import performanceAndSpeedProf from '../../assets/Professional/card_imgs/performanceAndSpeed.jpg'
+import seoOtimizationsProf from '../../assets/Professional/card_imgs/seoOptimizations.jpg'
+import cmsAndAdminPanelProf from '../../assets/Professional/card_imgs/cmsAndAdminPanel.jpg'
+import integrationsprof from '../../assets/Professional/card_imgs/intedrations.jpg'
+import securityAndComplianceProf from '../../assets/Professional/card_imgs/securityAndCompliance.jpg'
+import ongoingSupportProf from '../../assets/Professional/card_imgs/ongoingSupport.jpg'
 
 const cardDataPL = [
     {

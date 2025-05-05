@@ -10,7 +10,7 @@ import integrations from '../../assets/cards_imgs/integrations.png'
 import securityAndCompliance from '../../assets/cards_imgs/securityAndCompliance.png'
 import ongoingSupport from '../../assets/cards_imgs/ongoingSupport.png'
 // Professional imports
-import projectGoalsImgProf from '../../assets/Professional/card_imgs/project_goals.jpeg'
+import projectGoalsImgProf from '../../assets/Professional/card_imgs/project_goals.jpg'
 import designAndBrandingProf from '../../assets/Professional/card_imgs/design_and_branding.jpeg'
 import contentAndStructureProf from '../../assets/Professional/card_imgs/contend_and_structure.jpeg'
 import mobileResponsivenessProf from '../../assets/Professional/card_imgs/mobileResponsiveness.jpeg'

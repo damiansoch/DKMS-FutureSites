@@ -29,6 +29,8 @@ const Page1 = () => {
                     </Col>
 
                     <ComicCloud
+                        fontSize={18}
+                        // padding={8}
                         top="1%"
                         left="29%"
                         text={

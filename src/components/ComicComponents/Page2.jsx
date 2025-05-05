@@ -39,16 +39,14 @@ const Page2 = () => {
                     </Col>
 
                     <ComicCloud
+                        fontSize={18}
+                        padding={28}
                         top="20px"
                         right="10%"
                         text={
                             language === "pl"
-                                ? `**Nazywam się Damian**  \ntworzę strony z niczego,  
-jak cyfrowy architekt buduję od pomysłu do pikseli.  
-Każdy projekt to nowa misja — czysta karta, która zaraz ożyje!`
-                                : `**I'm Damian**  \nI create websites out of thin air,  
-like a digital architect turning ideas into pixels.  
-Every project is a new mission — a blank page ready to come alive!`
+                                ? `**Jestem D4M1AN**  \nCyfrowy architekt. Najemnik kodu.  \nTworzę strony z niczego — szybko, precyzyjnie, bez kompromisów.  \nKażdy projekt to misja. Każda strona to historia, która ożywa.`
+                                : `**I’m D4M1AN**  \nDigital architect. Code mercenary.  \nI build websites from nothing — fast, sharp, and always on point.  \nEvery project? A mission. Every site? A story brought to life.`
                         }
                     />
 

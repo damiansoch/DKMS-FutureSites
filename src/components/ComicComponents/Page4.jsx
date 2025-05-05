@@ -33,13 +33,15 @@ const Page4 = () => {
                         backgroundSize: '100% 100%',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
-                        position: "relative"
+                        position: "relative",
+                        overflow: "visible",
+                        zIndex: 20
                     }}
                          className=" col-5 bg-black border border-white border-4">
                         <ComicCloud
-                            fontSize={12}
+                            fontSize={14}
                             padding={8}
-                            top="68%"
+                            top="60%"
                             right="1%"
                             text={
                                 language === "pl"
@@ -55,11 +57,13 @@ const Page4 = () => {
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
                         position: "relative",
+                        overflow: "visible",
+                        zIndex: 20
                     }} className="bg-black border border-white border-4">
                         <ComicCloud
-                            fontSize={12}
+                            fontSize={14}
                             padding={8}
-                            top="68%"
+                            top="63%"
                             left="25%"
                             text={
                                 language === "pl"
@@ -77,11 +81,13 @@ const Page4 = () => {
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
                         position: "relative",
+                        overflow: "visible",
+                        zIndex: 19
                     }} className="col-6 bg-black border border-white border-4">
                         <ComicCloud
-                            fontSize={12}
+                            fontSize={14}
                             padding={8}
-                            top="70%"
+                            top="57%"
                             right="20%"
                             text={
                                 language === "pl"
@@ -97,12 +103,14 @@ const Page4 = () => {
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
                         position: "relative",
+                        overflow: "visible",
+                        zIndex: 19
                     }}
                          className="bg-black border border-white border-4">
                         <ComicCloud
-                            fontSize={12}
+                            fontSize={14}
                             padding={8}
-                            top="67%"
+                            top="65%"
                             left="2%"
                             text={
                                 language === "pl"

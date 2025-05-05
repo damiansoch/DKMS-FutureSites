@@ -37,12 +37,14 @@ const Page3 = () => {
 
                     </Col>
                     <ComicCloud
+                        fontSize={18}
+                        padding={28}
                         top={isMobile ? "20px" : "5%"}
                         right={isMobile ? "20px" : "55%"}
                         text={
                             language === "pl"
-                                ? `**Zaczynamy podróż**  \nKażda dobra strona zaczyna się od pomysłu —  \na ja zamieniam go w coś konkretnego, szybkiego i przyjaznego.  \nOd struktury po styl — każdy element tworzę z myślą o funkcjonalności i estetyce.`
-                                : `**Let’s begin the journey**  \nEvery great website starts with an idea —  \nand I turn that idea into something real, fast, and user-friendly.  \nFrom structure to style, I shape every part with purpose and precision.`
+                                ? `**Zaczynamy podróż**  \nKażda dobra strona zaczyna się od pomysłu — a ja zamieniam go w coś konkretnego, szybkiego i przyjaznego.  \nOd struktury po styl — każdy element tworzę z myślą o funkcjonalności i estetyce.`
+                                : `**Let’s begin the journey**  \nEvery great website starts with an idea — and I turn that idea into something real, fast, and user-friendly.  \nFrom structure to style, I shape every part with purpose and precision.`
                         }
 
                     />

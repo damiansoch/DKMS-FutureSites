@@ -37,7 +37,7 @@ const Page4 = () => {
                          className=" col-6 bg-black border border-white border-4">
                         <ComicCloud
 
-                            fontSize={14}
+                            fontSize={18}
                             padding={12}
                             top="2%"
                             right="2%"
@@ -57,9 +57,9 @@ const Page4 = () => {
                         position: "relative",
                     }} className="bg-black border border-white border-4">
                         <ComicCloud
-                            fontSize={14}
+                            fontSize={18}
                             padding={8}
-                            top="75%"
+                            top="70%"
                             left="5%"
                             text={
                                 language === "pl"

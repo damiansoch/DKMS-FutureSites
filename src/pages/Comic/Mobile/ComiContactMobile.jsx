@@ -86,8 +86,8 @@ const ComiContactMobile = () => {
     return (
         <div
             style={{
-                marginTop: "75px",
-                height: "calc(100dvh - 75px)",
+                marginTop: "70px",
+                height: "calc(100dvh - 70px)",
                 backgroundImage: `url(${contactBkg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',

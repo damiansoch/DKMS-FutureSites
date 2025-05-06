@@ -101,7 +101,7 @@ export default function MobileComicStack() {
             className="bg-dark p-0 overflow-hidden"
             style={{
                 marginTop: "70px",
-                height: "calc(100vh - 70px)",
+                height: "calc(100dvh - 70px)",
             }}
         >
             <div className="row h-100 p-1" style={{position: "relative"}}>

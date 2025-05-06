@@ -108,7 +108,7 @@ function App() {
                         {version === 'animated' && <BottomNav/>}
 
                         {/* Centered logo for mobile */}
-                        {!isHomePage && (
+                        {(!isHomePage && version === "animated") && (
                             <div className='d-md-none'>
                                 <div
                                     style={{

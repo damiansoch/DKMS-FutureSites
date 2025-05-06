@@ -36,6 +36,7 @@ import NavbarComic from "./components/Navs/NavbarComic.jsx";
 import ComiContact from "./pages/Comic/ComiContact.jsx";
 
 import MobileComicStack from "./pages/Comic/Mobile/HomeComicMobile.jsx";
+import ComiContactMobile from "./pages/Comic/Mobile/ComiContactMobile.jsx";
 
 ('');
 
@@ -167,6 +168,7 @@ function App() {
                                 ) : (
                                     <Routes>
                                         <Route path='/:lang/home' element={<MobileComicStack/>}></Route>
+                                        <Route path='/:lang/contact' element={<ComiContactMobile/>}/>
                                     </Routes>
                                 )}
                     </div>

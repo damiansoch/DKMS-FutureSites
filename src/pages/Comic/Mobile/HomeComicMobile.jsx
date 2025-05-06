@@ -1,6 +1,9 @@
-import React, {useEffect, useRef, useState} from "react";
-import {Button, Col, Container, Row} from "react-bootstrap";
-import {AnimatePresence, motion, useAnimation} from "framer-motion";
+import React, {useEffect, useState} from "react";
+import {useNavigation} from "react-router-dom";
+
+
+import {Container} from "react-bootstrap";
+import {AnimatePresence, motion} from "framer-motion";
 import {useSwipeable} from "react-swipeable";
 import ComicCloud from "../../../components/ComicComponents/ComicCloud.jsx";
 import {useLanguage} from "../../../Context/LanguageContext.jsx";
@@ -22,6 +25,7 @@ import Page13Img from "../../../assets/Comic/PagesMobile/Page13.png";
 import Page14Img from "../../../assets/Comic/PagesMobile/Page14.png";
 
 import InitiateButton from "../../../assets/Comic/PagesMobile/ButtonInitiate.png";
+import {useNavigate} from "react-router-dom";
 
 
 const slides = [Page1Img, Page2Img, Page3Img, Page4Img, Page5Img, Page6Img, Page7Img, Page8Img, Page9Img, Page10Img, Page11Img, Page12Img, Page13Img, Page14Img]
@@ -37,6 +41,7 @@ export default function MobileComicStack() {
     const [isNextSlideVisible, setIsNextSlideVisible] = useState(false);
 
     const {language} = useLanguage();
+    const navigate = useNavigate()
 
     useEffect(() => {
         // Step 1: Hide all slides
@@ -199,7 +204,7 @@ export default function MobileComicStack() {
                     <AnimatePresence>
                         <motion.div
                             onClick={() => {
-                                console.log("clicked");
+                                navigate(`/${language}/contact`)
                             }}
                             initial={{scale: 1, boxShadow: "0 0 0px rgba(0, 255, 255, 0.5)"}}
                             animate={{

@@ -78,7 +78,7 @@ function VersionModal({onClose}) {
                     <Button variant="outline-light" onClick={() => handleSelect('animated')}>
                         Animated
                     </Button>
-                    {!isMobile && (
+                    {(
                         <Button variant="outline-light" onClick={() => handleSelect('cartoon')}>
                             Cartoon
                         </Button>

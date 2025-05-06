@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {Routes, Route, Navigate, useLocation} from 'react-router-dom';
 import {Helmet, HelmetProvider} from 'react-helmet-async';
 
@@ -35,9 +35,22 @@ import HomeComic from './pages/Comic/HomeComic.jsx';
 import NavbarComic from "./components/Navs/NavbarComic.jsx";
 import ComiContact from "./pages/Comic/ComiContact.jsx";
 
+import MobileComicStack from "./pages/Comic/Mobile/HomeComicMobile.jsx";
+
 ('');
 
 function App() {
+
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     // Set <html lang="pl"> by default (SEO)
     useEffect(() => {
         document.documentElement.lang = 'pl';
@@ -141,15 +154,21 @@ function App() {
                                 <Route path='*' element={<Navigate to='/pl/home' replace/>}/>
                             </Routes>
                         ) : version === 'professional' ? (
-                            <Routes>
-                                <Route path='/:lang/home' element={<HomeProfessional/>}/>
-                            </Routes>
-                        ) : (
-                            <Routes>
-                                <Route path='/:lang/home' element={<HomeComic/>}/>
-                                <Route path='/:lang/contact' element={<ComiContact/>}/>
-                            </Routes>
-                        )}
+                                <Routes>
+                                    <Route path='/:lang/home' element={<HomeProfessional/>}/>
+                                </Routes>
+                            ) :
+                            !isMobile ?
+                                (
+                                    <Routes>
+                                        <Route path='/:lang/home' element={<HomeComic/>}/>
+                                        <Route path='/:lang/contact' element={<ComiContact/>}/>
+                                    </Routes>
+                                ) : (
+                                    <Routes>
+                                        <Route path='/:lang/home' element={<MobileComicStack/>}></Route>
+                                    </Routes>
+                                )}
                     </div>
                     <VersionSelectorButton/>
                     {version === 'animated' && <CustomCursor/>}

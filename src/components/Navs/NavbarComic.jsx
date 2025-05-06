@@ -83,12 +83,12 @@ const NavbarProfessional = () => {
                         src={logo}
                         alt="Fabryka Stron Logo"
                         style={{
-                            height: '120px',
+                            height: !isMobile ? '120px' : "70px",
                             width: 'auto',
                             objectFit: "fill",
                             marginTop: !isMobile ? "60px" : "0px",
                             transform: "rotate(-20deg)",
-                            marginLeft: "-40px"
+                            marginLeft: !isMobile ? "-40px" : "-10px"
                             // display: "none"
                         }}
                     />
@@ -99,7 +99,12 @@ const NavbarProfessional = () => {
                     ref={toggleRef}
                     aria-controls="basic-navbar-nav"
                     onClick={() => setMenuOpen(prev => !prev)}
-                    style={{border: 'none', background: 'transparent', padding: 0, marginTop: "-60px"}}
+                    style={{
+                        border: 'none',
+                        background: 'transparent',
+                        padding: 0,
+                        marginTop: !isMobile ? "-60px" : "-20px"
+                    }}
                 >
                     {menuOpen ? <FiX size={36}/> : <FiMenu size={36}/>}
                 </RBNavbar.Toggle>

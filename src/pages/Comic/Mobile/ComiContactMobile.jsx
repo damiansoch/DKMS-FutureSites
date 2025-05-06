@@ -107,7 +107,7 @@ const ComiContactMobile = () => {
                     backdropFilter: 'blur(8px)',
                     border: '2px solid rgba(255,255,255,0.15)',
                     color: '#fff',
-                    marginTop: "50px"
+                    marginTop: "10px"
                 }}
             >
                 <h4
@@ -130,33 +130,36 @@ const ComiContactMobile = () => {
                 >
                     <input type="hidden" name="_captcha" value="true"/>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>{t.yourName}</Form.Label>
+                    <Form.Group className="mb-2">
+                        <Form.Label className="mb-1" style={{fontSize: "0.85rem"}}>{t.yourName}</Form.Label>
                         <Form.Control
+                            size="sm"
                             type="text"
                             name="name"
                             placeholder={t.placeholderName}
                             style={inputStyle}
                             onChange={(e) => handleFieldChange('name', e.target.value)}
                         />
-                        {errors.name && <div style={{color: 'red'}}>{errors.name}</div>}
+                        {errors.name && <div style={{color: 'red', fontSize: '0.75rem'}}>{errors.name}</div>}
                     </Form.Group>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>{t.emailAddress}</Form.Label>
+                    <Form.Group className="mb-2">
+                        <Form.Label className="mb-1" style={{fontSize: "0.85rem"}}>{t.emailAddress}</Form.Label>
                         <Form.Control
+                            size="sm"
                             type="email"
                             name="email"
                             placeholder={t.placeholderEmail}
                             style={inputStyle}
                             onChange={(e) => handleFieldChange('email', e.target.value)}
                         />
-                        {errors.email && <div style={{color: 'red'}}>{errors.email}</div>}
+                        {errors.email && <div style={{color: 'red', fontSize: '0.75rem'}}>{errors.email}</div>}
                     </Form.Group>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>{t.phoneNumber}</Form.Label>
+                    <Form.Group className="mb-2">
+                        <Form.Label className="mb-1" style={{fontSize: "0.85rem"}}>{t.phoneNumber}</Form.Label>
                         <Form.Control
+                            size="sm"
                             type="tel"
                             name="phone"
                             placeholder={t.placeholderPhone}
@@ -164,18 +167,20 @@ const ComiContactMobile = () => {
                         />
                     </Form.Group>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>{t.yourMessage}</Form.Label>
+                    <Form.Group className="mb-2">
+                        <Form.Label className="mb-1" style={{fontSize: "0.85rem"}}>{t.yourMessage}</Form.Label>
                         <Form.Control
                             as="textarea"
-                            name="message"
                             rows={3}
+                            size="sm"
+                            name="message"
                             placeholder={t.placeholderMessage}
                             style={{...inputStyle, resize: 'vertical'}}
                             onChange={(e) => handleFieldChange('message', e.target.value)}
                         />
-                        {errors.message && <div style={{color: 'red'}}>{errors.message}</div>}
+                        {errors.message && <div style={{color: 'red', fontSize: '0.75rem'}}>{errors.message}</div>}
                     </Form.Group>
+
 
                     <div style={{position: 'relative', height: '80px', marginTop: '1.2rem'}}>
                         <img

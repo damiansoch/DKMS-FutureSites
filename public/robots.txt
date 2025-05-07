@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://website-factory.onrender.com/sitemap.xml
+Sitemap: https://dkms-futuresites.onrender.com/sitemap.xml

@@ -39,6 +39,7 @@ export default function MobileComicStack() {
     const [isPreviousSlideVisible, setIsPreviousSlideVisible] = useState(false);
     const [isCurrentSlideVisible, setIsCurrentSlideVisible] = useState(false);
     const [isNextSlideVisible, setIsNextSlideVisible] = useState(false);
+    const [isZoomed, setIsZoomed] = useState(false);
 
     const {language} = useLanguage();
     const navigate = useNavigate()
@@ -132,73 +133,83 @@ export default function MobileComicStack() {
                             {comicTexts[currentIndex] && (<ComicCloud
                                 {...comicTexts[currentIndex].style}
                                 text={comicTexts[currentIndex]?.[language] || ""}
+                                isZoomed={isZoomed}
+                                setIsZoomed={setIsZoomed}
                             />)}
                         </motion.div>
                     )}
                 </AnimatePresence>
 
-                {/* PREVIOUS SLIDE */}
-                <AnimatePresence>
-                    {isPreviousSlideVisible && previousSlide && (
-                        <motion.div
-                            key={`prev-${currentIndex - 1}`}
-                            initial={{opacity: 0, scale: 0.8, x: 30}}
-                            animate={{opacity: 1, scale: 1, x: 0}}
-                            exit={{opacity: 0, scale: 0.8, x: 30}}
-                            transition={{duration: 0.3}}
-                            className="bg-info border border-4 border-white "
-                            style={{
-                                position: "absolute",
-                                top: "40px",
-                                right: "40px",
-                                width: "40px",
-                                aspectRatio: "9 / 19.5",
-                                zIndex: 3,
-                                backgroundImage: `url(${slides[currentIndex - 1]})`,
-                                backgroundSize: "100% 100%",
-                                backgroundPosition: "center"
-                            }}
-                            onClick={() => setCurrentIndex(currentIndex - 1)}
-                        >
-                            {comicTexts[currentIndex - 1]?.style && (<ComicCloud
-                                {...comicTexts[currentIndex - 1].style}
-                                text={comicTexts[currentIndex - 1]?.[language] || ""}
-                            />)}
 
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                {!isZoomed && (
+                    <>
+                        {/*PREVIOUS SLIDE */}
+                        <AnimatePresence>
+                            {isPreviousSlideVisible && previousSlide && (
+                                <motion.div
+                                    key={`prev-${currentIndex - 1}`}
+                                    initial={{opacity: 0, scale: 0.8, x: 30}}
+                                    animate={{opacity: 1, scale: 1, x: 0}}
+                                    exit={{opacity: 0, scale: 0.8, x: 30}}
+                                    transition={{duration: 0.3}}
+                                    className="bg-info border border-4 border-white "
+                                    style={{
+                                        position: "absolute",
+                                        top: "40px",
+                                        right: "40px",
+                                        width: "40px",
+                                        aspectRatio: "9 / 19.5",
+                                        zIndex: 3,
+                                        backgroundImage: `url(${slides[currentIndex - 1]})`,
+                                        backgroundSize: "100% 100%",
+                                        backgroundPosition: "center"
+                                    }}
+                                    onClick={() => setCurrentIndex(currentIndex - 1)}
+                                >
+                                    {comicTexts[currentIndex - 1]?.style && (<ComicCloud
+                                        {...comicTexts[currentIndex - 1].style}
+                                        text={comicTexts[currentIndex - 1]?.[language] || ""}
+                                        hide={true}
+                                    />)}
 
-                {/* NEXT SLIDE */}
-                <AnimatePresence>
-                    {isNextSlideVisible && nextSlide && (
-                        <motion.div
-                            key={`next-${currentIndex + 1}`}
-                            initial={{opacity: 0, scale: 0.8, x: 30}}
-                            animate={{opacity: 1, scale: 1, x: 0}}
-                            exit={{opacity: 0, scale: 0.8, x: 30}}
-                            transition={{duration: 0.3}}
-                            className="bg-success border border-4 border-white"
-                            style={{
-                                position: "absolute",
-                                bottom: "40px",
-                                right: "40px",
-                                width: "40px",
-                                aspectRatio: "9 / 19.5",
-                                zIndex: 3,
-                                backgroundImage: `url(${slides[currentIndex + 1]})`,
-                                backgroundSize: "100% 100%",
-                                backgroundPosition: "center"
-                            }}
-                            onClick={() => setCurrentIndex(currentIndex + 1)}
-                        >
-                            {comicTexts[currentIndex + 1] && (<ComicCloud
-                                {...comicTexts[currentIndex + 1].style}
-                                text={comicTexts[currentIndex + 1]?.[language] || ""}
-                            />)}
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+
+                        // NEXT SLIDE
+                        <AnimatePresence>
+                            {isNextSlideVisible && nextSlide && (
+                                <motion.div
+                                    key={`next-${currentIndex + 1}`}
+                                    initial={{opacity: 0, scale: 0.8, x: 30}}
+                                    animate={{opacity: 1, scale: 1, x: 0}}
+                                    exit={{opacity: 0, scale: 0.8, x: 30}}
+                                    transition={{duration: 0.3}}
+                                    className="bg-success border border-4 border-white"
+                                    style={{
+                                        position: "absolute",
+                                        bottom: "40px",
+                                        right: "40px",
+                                        width: "40px",
+                                        aspectRatio: "9 / 19.5",
+                                        zIndex: 3,
+                                        backgroundImage: `url(${slides[currentIndex + 1]})`,
+                                        backgroundSize: "100% 100%",
+                                        backgroundPosition: "center"
+                                    }}
+                                    onClick={() => setCurrentIndex(currentIndex + 1)}
+                                >
+                                    {comicTexts[currentIndex + 1] && (<ComicCloud
+                                        {...comicTexts[currentIndex + 1].style}
+                                        text={comicTexts[currentIndex + 1]?.[language] || ""}
+                                        hide={true}
+                                    />)}
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </>
+                )}
+
 
                 {currentIndex === slides.length - 1 && (
                     <AnimatePresence>

@@ -32,7 +32,7 @@ function VersionSelectorButton() {
                 style={{
                     position: 'fixed',
                     top: '50%',
-                    left: '10px',
+                    left: '2px',
                     transform: 'translateY(-50%)',
                     zIndex: 1050,
                     backgroundColor: '#06172a',
@@ -45,10 +45,11 @@ function VersionSelectorButton() {
                     justifyContent: 'center',
                     color: 'white',
                     cursor: 'pointer',
+                    opacity: 0.5
                     // display: "none"
                 }}
-            >
-                <FaPaintBrush size={18}/>
+            ><span style={{opacity: 1}}>
+                <FaPaintBrush size={18} color="yellow"/></span>
             </motion.button>
 
             {showModal && <VersionModal onClose={() => setShowModal(false)}/>}

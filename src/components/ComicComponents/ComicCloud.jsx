@@ -1,5 +1,6 @@
-import React, {useRef, useLayoutEffect, useState} from "react";
+import React, {useRef, useLayoutEffect, useState, useEffect} from "react";
 import {marked} from "marked";
+
 
 const ComicCloud = ({
                         text,
@@ -16,6 +17,17 @@ const ComicCloud = ({
     const [contentHeight, setContentHeight] = useState(100);
     const contentRef = useRef(null);
     const html = marked.parse(text);
+
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
 
     useLayoutEffect(() => {
         if (contentRef.current) {
@@ -65,7 +77,8 @@ const ComicCloud = ({
                 transformOrigin: getTransformOrigin(),
                 transition: "transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
                 zIndex: isZoomed ? 9999 : 1,
-                display: hide ? "none" : "block"
+                display: hide ? "none" : "block",
+
             }}
         >
             <div style={{position: "relative", width: "100%", height: contentHeight}}>
@@ -105,7 +118,8 @@ const ComicCloud = ({
                                 color: "black",
                                 boxSizing: "border-box",
                                 wordWrap: "break-word",
-                                textAlign: "center"
+                                textAlign: "center",
+
                             }}
                             dangerouslySetInnerHTML={{__html: html}}
                         />
@@ -113,7 +127,7 @@ const ComicCloud = ({
                 </svg>
 
                 {/* Magnifier Icon Button (shown only when not zoomed in) */}
-                {!isZoomed && (
+                {(!isZoomed && isMobile) && (
                     <button
                         className="magnifier-btn"
 

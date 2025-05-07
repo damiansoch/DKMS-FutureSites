@@ -152,7 +152,7 @@ export default function MobileComicStack() {
                                     animate={{opacity: 1, scale: 1, x: 0}}
                                     exit={{opacity: 0, scale: 0.8, x: 30}}
                                     transition={{duration: 0.3}}
-                                    className="bg-info border border-4 border-white "
+                                    className="bg-info border border-1 border-white "
                                     style={{
                                         position: "absolute",
                                         top: "40px",
@@ -162,7 +162,8 @@ export default function MobileComicStack() {
                                         zIndex: 3,
                                         backgroundImage: `url(${slides[currentIndex - 1]})`,
                                         backgroundSize: "100% 100%",
-                                        backgroundPosition: "center"
+                                        backgroundPosition: "center",
+                                        boxShadow: "-2px 2px 5px #fff",
                                     }}
                                     onClick={() => setCurrentIndex(currentIndex - 1)}
                                 >
@@ -185,7 +186,7 @@ export default function MobileComicStack() {
                                     animate={{opacity: 1, scale: 1, x: 0}}
                                     exit={{opacity: 0, scale: 0.8, x: 30}}
                                     transition={{duration: 0.3}}
-                                    className="bg-success border border-4 border-white"
+                                    className="bg-success border border-1 border-white"
                                     style={{
                                         position: "absolute",
                                         bottom: "40px",
@@ -195,7 +196,8 @@ export default function MobileComicStack() {
                                         zIndex: 3,
                                         backgroundImage: `url(${slides[currentIndex + 1]})`,
                                         backgroundSize: "100% 100%",
-                                        backgroundPosition: "center"
+                                        backgroundPosition: "center",
+                                        boxShadow: "-2px -2px 5px #fff",
                                     }}
                                     onClick={() => setCurrentIndex(currentIndex + 1)}
                                 >

@@ -19,6 +19,8 @@ import {UIProvider} from './Context/UIContext.jsx';
 
 import {useVersion} from './Context/VersionContext.jsx';
 
+import {useLanguage} from "./Context/LanguageContext.jsx";
+
 import logo from './assets/fabryka_stron_logo.png';
 import Contact from './pages/Animated/Contact.jsx';
 import CopyrightNote from './components/CopyrightNote.jsx';
@@ -43,6 +45,7 @@ import ComiContactMobile from "./pages/Comic/Mobile/ComiContactMobile.jsx";
 function App() {
 
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const {language} = useLanguage()
 
     useEffect(() => {
         const handleResize = () => {
@@ -139,6 +142,11 @@ function App() {
                     <div className='overflow-hidden'>
                         {version === 'animated' ? (
                             <Routes>
+                                {/* Redirect from root "/" to "/:lang/home" */}
+                                <Route
+                                    path="/"
+                                    element={<Navigate to={`/${language}/home`} replace/>}
+                                />
                                 <Route path='/:lang/home' element={<Home/>}/>
                                 <Route path='/:lang/process' element={<Process/>}/>
                                 <Route path='/:lang/offer' element={<Offer/>}/>
@@ -146,31 +154,42 @@ function App() {
                                 <Route path='/:lang/contact' element={<Contact/>}/>
                                 <Route path='/:lang/login' element={<Login/>}/>
                                 <Route path='/:lang/register' element={<Register/>}/>
-                                <Route
-                                    path='/login/callback'
-                                    element={<RedirectGoogleAuth/>}
-                                />
+                                <Route path='/login/callback' element={<RedirectGoogleAuth/>}/>
 
-                                {/* Fallback: redirect to /pl/home */}
-                                <Route path='*' element={<Navigate to='/pl/home' replace/>}/>
+                                {/* Fallback */}
+                                <Route path='*' element={<Navigate to={`/${language}/home`} replace/>}/>
                             </Routes>
                         ) : version === 'professional' ? (
-                                <Routes>
-                                    <Route path='/:lang/home' element={<HomeProfessional/>}/>
-                                </Routes>
-                            ) :
-                            !isMobile ?
-                                (
-                                    <Routes>
-                                        <Route path='/:lang/home' element={<HomeComic/>}/>
-                                        <Route path='/:lang/contact' element={<ComiContact/>}/>
-                                    </Routes>
-                                ) : (
-                                    <Routes>
-                                        <Route path='/:lang/home' element={<MobileComicStack/>}></Route>
-                                        <Route path='/:lang/contact' element={<ComiContactMobile/>}/>
-                                    </Routes>
-                                )}
+                            <Routes>
+                                <Route
+                                    path="/"
+                                    element={<Navigate to={`/${language}/home`} replace/>}
+                                />
+                                <Route path='/:lang/home' element={<HomeProfessional/>}/>
+                                <Route path='*' element={<Navigate to={`/${language}/home`} replace/>}/>
+                            </Routes>
+                        ) : !isMobile ? (
+                            <Routes>
+                                <Route
+                                    path="/"
+                                    element={<Navigate to={`/${language}/home`} replace/>}
+                                />
+                                <Route path='/:lang/home' element={<HomeComic/>}/>
+                                <Route path='/:lang/contact' element={<ComiContact/>}/>
+                                <Route path='*' element={<Navigate to={`/${language}/home`} replace/>}/>
+                            </Routes>
+                        ) : (
+                            <Routes>
+                                <Route
+                                    path="/"
+                                    element={<Navigate to={`/${language}/home`} replace/>}
+                                />
+                                <Route path='/:lang/home' element={<MobileComicStack/>}/>
+                                <Route path='/:lang/contact' element={<ComiContactMobile/>}/>
+                                <Route path='*' element={<Navigate to={`/${language}/home`} replace/>}/>
+                            </Routes>
+                        )}
+
                     </div>
                     <VersionSelectorButton/>
                     {version === 'animated' && <CustomCursor/>}

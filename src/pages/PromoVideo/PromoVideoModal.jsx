@@ -18,7 +18,8 @@ const PromoVideoModal = ({isOpen, onClose, videoSrc}) => {
                     controlsList="nodownload nofullscreen"
                     autoPlay
                     playsInline
-                    // onContextMenu={(e) => e.preventDefault()}
+                    onContextMenu={(e) => e.preventDefault()}
+                    onEnded={() => setTimeout(onClose, 500)}
                 />
             </div>
         </div>

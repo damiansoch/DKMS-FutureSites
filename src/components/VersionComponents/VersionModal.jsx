@@ -6,7 +6,7 @@ import {useVersion} from "../../Context/VersionContext.jsx";
 import {useEffect, useState} from "react";
 import {useLanguage} from "../../Context/LanguageContext.jsx";
 
-function VersionModal({onClose}) {
+function VersionModal({onClose, showVideo, setShowVideo}) {
     const {setVersion} = useVersion();
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const {language} = useLanguage();
@@ -84,6 +84,9 @@ function VersionModal({onClose}) {
                         </Button>
                     )
                     }
+                    <button className="promo-play-button  w-100" onClick={() => setShowVideo(true)}>
+                        <span className="w-100 mx-auto"> Take a Quick Look</span>
+                    </button>
 
                 </div>
             </motion.div>

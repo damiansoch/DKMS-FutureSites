@@ -39,13 +39,15 @@ import ComiContact from "./pages/Comic/ComiContact.jsx";
 
 import MobileComicStack from "./pages/Comic/Mobile/HomeComicMobile.jsx";
 import ComiContactMobile from "./pages/Comic/Mobile/ComiContactMobile.jsx";
+import PromoVideoModal from "./pages/PromoVideo/PromoVideoModal.jsx";
+import promoVideo from "./assets/videos/PromoVideo.mp4"
 
-('');
 
 function App() {
 
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const {language} = useLanguage()
+    const [showVideo, setShowVideo] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -139,6 +141,11 @@ function App() {
                         )}
                     </div>
                     <CopyrightNote/>
+                    <PromoVideoModal
+                        isOpen={showVideo}
+                        onClose={() => setShowVideo(false)}
+                        videoSrc={promoVideo}
+                    />
                     <div className='overflow-hidden'>
                         {version === 'animated' ? (
                             <Routes>
@@ -191,7 +198,7 @@ function App() {
                         )}
 
                     </div>
-                    <VersionSelectorButton/>
+                    <VersionSelectorButton showVideo={showVideo} setShowVideo={setShowVideo}/>
                     {version === 'animated' && <CustomCursor/>}
                 </UIProvider>
             </AuthProvider>

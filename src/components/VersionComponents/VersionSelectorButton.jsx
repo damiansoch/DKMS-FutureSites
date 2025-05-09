@@ -3,7 +3,7 @@ import {FaPaintBrush} from 'react-icons/fa';
 import VersionModal from './VersionModal';
 import {motion} from 'framer-motion';
 
-function VersionSelectorButton() {
+function VersionSelectorButton({showVideo, setShowVideo}) {
     const [showModal, setShowModal] = useState(false);
 
     return (
@@ -52,7 +52,8 @@ function VersionSelectorButton() {
                 <FaPaintBrush size={18} color="yellow"/></span>
             </motion.button>
 
-            {showModal && <VersionModal onClose={() => setShowModal(false)}/>}
+            {showModal &&
+                <VersionModal onClose={() => setShowModal(false)} showVideo={showVideo} setShowVideo={setShowVideo}/>}
         </>
     );
 }

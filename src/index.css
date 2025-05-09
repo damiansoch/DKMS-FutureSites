@@ -455,5 +455,100 @@
     z-index: 1;
 }
 
+/*PROMO VIDEO*/
+/* Overlay background */
+.promo-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.85); /* smoked glass effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Modal content */
+.promo-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 720px;
+    max-height: 90vh;
+    background: transparent;
+}
+
+/* Video element */
+.promo-video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Close button */
+.promo-close-button {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.promo-close-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+}
+
+/* Watch Promo button */
+.promo-play-button {
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.6rem;
+    border: none;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.promo-play-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.promo-play-button::before {
+    content: "▶";
+    font-size: 1.4rem;
+    animation: pulsePlay 1.4s infinite;
+}
+
+@keyframes pulsePlay {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+}
+
 
 

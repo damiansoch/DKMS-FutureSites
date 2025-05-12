@@ -19,11 +19,14 @@ const HomeProfessional = () => {
     }, []);
 
     return (
-        <div id='start' style={{
-            fontFamily: "'Open Sans', sans-serif",
-            background: 'rgba(255, 245, 239, 0.2)', // subtle peach tint
-            backdropFilter: 'blur(2px)',
-        }}>
+        <div id='start'
+             className="container"
+            //      style={{
+            //     fontFamily: "'Open Sans', sans-serif",
+            //     background: 'rgba(255, 245, 239, 0.2)', // subtle peach tint
+            //     backdropFilter: 'blur(2px)',
+            // }}
+        >
             <div
                 className="mt-5 mb-2 mx-auto   position-relative overflow-hidden"
                 style={{

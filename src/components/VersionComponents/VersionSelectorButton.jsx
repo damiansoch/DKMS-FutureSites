@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaPaintBrush } from 'react-icons/fa';
+import { useLanguage } from '../../Context/LanguageContext';
 import VersionModal from './VersionModal';
 
 function VersionSelectorButton({ showVideo, setShowVideo }) {
   const [showModal, setShowModal] = useState(false);
   const [showHint, setShowHint] = useState(true);
   const [dontShowAgain, setDontShowAgain] = useState(false);
+  const { language } = useLanguage();
 
   const handleCloseHint = () => {
     if (!dontShowAgain) {
@@ -69,20 +71,14 @@ function VersionSelectorButton({ showVideo, setShowVideo }) {
                     textAlign: 'center',
                   }}
                 >
-                  🎨 Want to try all the cool versions of this page?
+                  🎨{' '}
+                  {language === 'pl'
+                    ? 'Chcesz zobaczyć wszystkie wersje tej strony?'
+                    : 'Want to try all the cool versions of this page?'}
                   <br />
-                  Click the brush button on the left!
-                  {/* <div style={{ marginTop: '10px' }}>
-                    <label style={{ fontSize: '13px' }}>
-                      <input
-                        type='checkbox'
-                        checked={dontShowAgain}
-                        onChange={(e) => setDontShowAgain(e.target.checked)}
-                        style={{ marginRight: '6px' }}
-                      />
-                      Don't show again
-                    </label>
-                  </div> */}
+                  {language === 'pl'
+                    ? 'Kliknij przycisk z pędzlem po lewej!'
+                    : 'Click the brush button on the left!'}
                   <br />
                   <button
                     onClick={handleCloseHint}
@@ -97,7 +93,7 @@ function VersionSelectorButton({ showVideo, setShowVideo }) {
                       fontFamily: 'inherit',
                     }}
                   >
-                    OK!
+                    {language === 'pl' ? 'OK!' : 'OK!'}
                   </button>
                 </div>
               </foreignObject>
